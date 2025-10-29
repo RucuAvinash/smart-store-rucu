@@ -1,43 +1,16 @@
-# Pro Analytics 02 Python Starter Repository
+# Smart Sales Starter Files
 
-> Use this repo to start a professional Python project.
-
-- Additional information: <https://github.com/denisecase/pro-analytics-02>
-- Project organization: [STRUCTURE](./STRUCTURE.md)
-- Build professional skills:
-  - **Environment Management**: Every project in isolation
-  - **Code Quality**: Automated checks for fewer bugs
-  - **Documentation**: Use modern project documentation tools
-  - **Testing**: Prove your code works
-  - **Version Control**: Collaborate professionally
+> Start a processing a BI pipeline by reading raw data into pandas DataFrames (a two dimensional representation much like an Excel sheet).
 
 ---
 
-## WORKFLOW 1. Set Up Your Machine
+## WORKFLOW 1. Set Up Your Machine (DONE in P1)
 
-Proper setup is critical.
-Complete each step in the following guide and verify carefully.
-
-- [SET UP MACHINE](./SET_UP_MACHINE.md)
+Proper setup is critical. Follow earlier instructions to set up your machine.
 
 ---
 
-## WORKFLOW 2. Set Up Your Project
-
-After verifying your machine is set up, set up a new Python project by copying this template.
-Complete each step in the following guide.
-
-- [SET UP PROJECT](./SET_UP_PROJECT.md)
-
-It includes the critical commands to set up your local environment (and activate it):
-
-```shell
-uv venv
-uv python pin 3.12
-uv sync --extra dev --extra docs --upgrade
-uv run pre-commit install
-uv run python --version
-```
+## WORKFLOW 2. Set Up Your Project (DONE in P1)
 
 **Windows (PowerShell):**
 
@@ -45,18 +18,10 @@ uv run python --version
 .\.venv\Scripts\activate
 ```
 
-**macOS / Linux / WSL:**
-
-```shell
-source .venv/bin/activate
-```
-
----
 
 ## WORKFLOW 3. Daily Workflow
 
-Please ensure that the prior steps have been verified before continuing.
-When working on a project, we open just that project in VS Code.
+As we progress, we'll use this daily workflow often.
 
 ### 3.1 Git Pull from GitHub
 
@@ -68,7 +33,8 @@ git pull
 
 ### 3.2 Run Checks as You Work
 
-This mirrors real work where we typically:
+If we need additional packages, we first add them to pyproject.toml. 
+Add pre-commit to pyproject.toml if you haven't already. 
 
 1. Update dependencies (for security and compatibility).
 2. Clean unused cached packages to free space.
@@ -93,15 +59,6 @@ uv run pytest
 
 NOTE: The second `git add .` ensures any automatic fixes made by Ruff or pre-commit are included before testing or committing.
 
-<details>
-<summary>Click to see a note on best practices</summary>
-
-`uvx` runs the latest version of a tool in an isolated cache, outside the virtual environment.
-This keeps the project light and simple, but behavior can change when the tool updates.
-For fully reproducible results, or when you need to use the local `.venv`, use `uv run` instead.
-
-</details>
-
 ### 3.3 Build Project Documentation
 
 Make sure you have current doc dependencies, then build your docs, fix any errors, and serve them locally to test.
@@ -117,29 +74,13 @@ uv run mkdocs serve
 ### 3.4 Execute
 
 This project includes demo code.
-Run the demo Python modules to confirm everything is working.
+Run the data_prep module to confirm everything is working.
 
 In VS Code terminal, run:
 
 ```shell
-uv run python -m analytics_project.demo_module_basics
-uv run python -m analytics_project.demo_module_languages
-uv run python -m analytics_project.demo_module_stats
-uv run python -m analytics_project.demo_module_viz
+uv run python -m analytics_project.data_prep
 ```
-
-You should see:
-
-- Log messages in the terminal
-- Greetings in several languages
-- Simple statistics
-- A chart window open (close the chart window to continue).
-
-If this works, your project is ready! If not, check:
-
-- Are you in the right folder? (All terminal commands are to be run from the root project folder.)
-- Did you run the full `uv sync --extra dev --extra docs --upgrade` command?
-- Are there any error messages? (ask for help with the exact error)
 
 ---
 
@@ -166,5 +107,4 @@ With a working version safe in GitHub, start making changes to the code.
 Before starting a new session, remember to do a `git pull` and keep your tools updated.
 
 Each time forward progress is made, remember to git add-commit-push.
-
 
