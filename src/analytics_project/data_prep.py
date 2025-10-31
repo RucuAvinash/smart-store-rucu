@@ -9,7 +9,7 @@ import pathlib
 
 import pandas as pd
 
-from .utils_logger import init_logger, logger, project_root
+from utils_logger import init_logger, logger, project_root
 
 # Set up paths as constants
 DATA_DIR: pathlib.Path = project_root.joinpath("data")
@@ -31,6 +31,9 @@ def read_and_log(path: pathlib.Path) -> pd.DataFrame:
         # Typically, we log the start of a file read operation
         logger.info(f"Reading raw data from {path}.")
         df = pd.read_csv(path)
+        print(f"\n File: {path.name}")
+        print(df)
+
         # Typically, we log the successful completion of a file read operation
         logger.info(
             f"{path.name}: loaded DataFrame with shape {df.shape[0]} rows x {df.shape[1]} cols"
