@@ -1,4 +1,4 @@
-Project P2: BI Python – Reading Raw Data into pandas DataFrames
+📊 Project P2: BI Python – Reading Raw Data into pandas DataFrames
 This module verifies the initial setup of your Business Intelligence (BI) Python project by reading raw CSV files into pandas DataFrames and logging the process. It ensures that your data pipeline is correctly configured before deeper analysis begins.
 📁 Directory Structure
 analytics_project/
