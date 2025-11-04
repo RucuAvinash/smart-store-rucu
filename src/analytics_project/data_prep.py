@@ -15,6 +15,8 @@ from utils_logger import init_logger, logger, project_root
 DATA_DIR: pathlib.Path = project_root.joinpath("data")
 RAW_DATA_DIR: pathlib.Path = DATA_DIR.joinpath("raw")
 
+import os
+print("Current working directory:", os.getcwd())
 
 # Define a reusable function that accepts a full path.
 def read_and_log(path: pathlib.Path) -> pd.DataFrame:
