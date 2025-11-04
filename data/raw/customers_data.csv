@@ -1,4 +1,4 @@
-CustomerID,Name,Region,JoinDate,Years WithCompany,PreferredChannel
+CustomerID,Name,Region,JoinDate,YearsWithCompany,PreferredChannel
 1000,Robert Gomez,West,2/25/2024,3,Email
 1001,John Silva,East,12/1/2020,1,Email
 1002,Mark Marshall,Central,8/8/2020,5,Email
