@@ -1,0 +1,858 @@
+2025-11-06 16:15:34.951 | INFO     | __main__:main:177 - ==================================
+2025-11-06 16:15:34.952 | INFO     | __main__:main:178 - STARTING prepare_customers_data.py
+2025-11-06 16:15:34.952 | INFO     | __main__:main:179 - ==================================
+2025-11-06 16:15:34.952 | INFO     | __main__:main:181 - Root         : C:\Repos\smart-store-rucu\src
+2025-11-06 16:15:34.953 | INFO     | __main__:main:182 - data/raw     : C:\Repos\smart-store-rucu\src\data\raw
+2025-11-06 16:15:34.953 | INFO     | __main__:main:183 - data/prepared: C:\Repos\smart-store-rucu\src\data\prepared
+2025-11-06 16:15:34.953 | INFO     | __main__:main:184 - scripts      : C:\Repos\smart-store-rucu\src\analytics_project
+2025-11-06 16:15:34.954 | INFO     | __main__:read_raw_data:64 - READING: C:\Repos\smart-store-rucu\src\data\raw\customers_data.csv.
+2025-11-06 16:15:34.955 | ERROR    | __main__:read_raw_data:67 - File not found: C:\Repos\smart-store-rucu\src\data\raw\customers_data.csv
+2025-11-06 16:15:34.956 | INFO     | __main__:main:196 - Initial dataframe columns: 
+2025-11-06 16:15:34.956 | INFO     | __main__:main:197 - Initial dataframe shape: (0, 0)
+2025-11-06 16:25:51.675 | INFO     | __main__:main:177 - ==================================
+2025-11-06 16:25:51.675 | INFO     | __main__:main:178 - STARTING prepare_customers_data.py
+2025-11-06 16:25:51.676 | INFO     | __main__:main:179 - ==================================
+2025-11-06 16:25:51.676 | INFO     | __main__:main:181 - Root         : C:\Repos\smart-store-rucu\src
+2025-11-06 16:25:51.676 | INFO     | __main__:main:182 - data/raw     : C:\Repos\smart-store-rucu\src\data\raw
+2025-11-06 16:25:51.676 | INFO     | __main__:main:183 - data/prepared: C:\Repos\smart-store-rucu\src\data\prepared
+2025-11-06 16:25:51.677 | INFO     | __main__:main:184 - scripts      : C:\Repos\smart-store-rucu\src\analytics_project
+2025-11-06 16:25:51.677 | INFO     | __main__:read_raw_data:64 - READING: C:\Repos\smart-store-rucu\src\data\raw\customers_data.csv.
+2025-11-06 16:25:51.681 | INFO     | __main__:main:196 - Initial dataframe columns: CustomerID, Name, Region, JoinDate, YearsWithCompany, PreferredChannel
+2025-11-06 16:25:51.681 | INFO     | __main__:main:197 - Initial dataframe shape: (201, 6)
+2025-11-06 16:25:51.681 | INFO     | __main__:remove_duplicates:100 - FUNCTION START: remove_duplicates with dataframe shape=(201, 6)
+2025-11-06 16:25:51.689 | INFO     | __main__:remove_duplicates:111 - Original dataframe shape: (201, 6)
+2025-11-06 16:25:51.689 | INFO     | __main__:remove_duplicates:112 - Deduped  dataframe shape: (201, 6)
+2025-11-06 16:25:51.689 | INFO     | __main__:handle_missing_values:128 - FUNCTION START: handle_missing_values with dataframe shape=(201, 6)
+2025-11-06 16:25:51.691 | INFO     | __main__:handle_missing_values:132 - Total missing values before handling: 0
+2025-11-06 16:25:51.691 | INFO     | __main__:handle_missing_values:141 - Total missing values after handling: 0
+2025-11-06 16:25:51.691 | INFO     | __main__:handle_missing_values:142 - 201 records remaining after handling missing values.
+2025-11-06 16:25:51.691 | INFO     | __main__:remove_outliers:156 - FUNCTION START: remove_outliers with dataframe shape=(201, 6)
+2025-11-06 16:25:51.692 | INFO     | __main__:remove_outliers:164 - Removed 0 outlier rows
+2025-11-06 16:25:51.692 | INFO     | __main__:remove_outliers:165 - 201 records remaining after removing outliers.
+2025-11-06 16:25:51.692 | INFO     | __main__:save_prepared_data:82 - FUNCTION START: save_prepared_data with file_name=customers_prepared.csv, dataframe shape=(201, 6)
+2025-11-06 16:25:51.696 | INFO     | __main__:save_prepared_data:85 - Data saved to C:\Repos\smart-store-rucu\src\data\prepared\customers_prepared.csv
+2025-11-06 16:25:51.697 | INFO     | __main__:main:220 - ==================================
+2025-11-06 16:25:51.697 | INFO     | __main__:main:221 - Original shape: (201, 6)
+2025-11-06 16:25:51.697 | INFO     | __main__:main:222 - Cleaned shape:  (201, 6)
+2025-11-06 16:25:51.697 | INFO     | __main__:main:223 - ==================================
+2025-11-06 16:25:51.697 | INFO     | __main__:main:224 - FINISHED prepare_customers_data.py
+2025-11-06 16:25:51.697 | INFO     | __main__:main:225 - ==================================
+2025-11-06 18:08:41.319 | INFO     | __main__:main:177 - ==================================
+2025-11-06 18:08:41.320 | INFO     | __main__:main:178 - STARTING prepare_customers_data.py
+2025-11-06 18:08:41.320 | INFO     | __main__:main:179 - ==================================
+2025-11-06 18:08:41.321 | INFO     | __main__:main:181 - Root         : C:\Repos\smart-store-rucu\src
+2025-11-06 18:08:41.321 | INFO     | __main__:main:182 - data/raw     : C:\Repos\smart-store-rucu\src\data\raw
+2025-11-06 18:08:41.321 | INFO     | __main__:main:183 - data/prepared: C:\Repos\smart-store-rucu\src\data\prepared
+2025-11-06 18:08:41.322 | INFO     | __main__:main:184 - scripts      : C:\Repos\smart-store-rucu\src\analytics_project
+2025-11-06 18:08:41.322 | INFO     | __main__:read_raw_data:64 - READING: C:\Repos\smart-store-rucu\src\data\raw\customers_data.csv.
+2025-11-06 18:08:41.349 | INFO     | __main__:main:196 - Initial dataframe columns: CustomerID, Name, Region, JoinDate, YearsWithCompany, PreferredChannel
+2025-11-06 18:08:41.349 | INFO     | __main__:main:197 - Initial dataframe shape: (209, 6)
+2025-11-06 18:08:41.352 | INFO     | __main__:remove_duplicates:100 - FUNCTION START: remove_duplicates with dataframe shape=(209, 6)
+2025-11-06 18:08:41.364 | INFO     | __main__:remove_duplicates:111 - Original dataframe shape: (209, 6)
+2025-11-06 18:08:41.364 | INFO     | __main__:remove_duplicates:112 - Deduped  dataframe shape: (201, 6)
+2025-11-06 18:08:41.364 | INFO     | __main__:handle_missing_values:128 - FUNCTION START: handle_missing_values with dataframe shape=(201, 6)
+2025-11-06 18:08:41.366 | INFO     | __main__:handle_missing_values:132 - Total missing values before handling: 5
+2025-11-06 18:08:41.368 | INFO     | __main__:handle_missing_values:141 - Total missing values after handling: 5
+2025-11-06 18:08:41.368 | INFO     | __main__:handle_missing_values:142 - 201 records remaining after handling missing values.
+2025-11-06 18:08:41.369 | INFO     | __main__:remove_outliers:156 - FUNCTION START: remove_outliers with dataframe shape=(201, 6)
+2025-11-06 18:08:41.369 | INFO     | __main__:remove_outliers:164 - Removed 0 outlier rows
+2025-11-06 18:08:41.369 | INFO     | __main__:remove_outliers:165 - 201 records remaining after removing outliers.
+2025-11-06 18:08:41.369 | INFO     | __main__:save_prepared_data:82 - FUNCTION START: save_prepared_data with file_name=customers_prepared.csv, dataframe shape=(201, 6)
+2025-11-06 18:08:41.372 | INFO     | __main__:save_prepared_data:85 - Data saved to C:\Repos\smart-store-rucu\src\data\prepared\customers_prepared.csv
+2025-11-06 18:08:41.372 | INFO     | __main__:main:220 - ==================================
+2025-11-06 18:08:41.373 | INFO     | __main__:main:221 - Original shape: (201, 6)
+2025-11-06 18:08:41.373 | INFO     | __main__:main:222 - Cleaned shape:  (209, 6)
+2025-11-06 18:08:41.373 | INFO     | __main__:main:223 - ==================================
+2025-11-06 18:08:41.373 | INFO     | __main__:main:224 - FINISHED prepare_customers_data.py
+2025-11-06 18:08:41.373 | INFO     | __main__:main:225 - ==================================
+2025-11-06 18:13:39.006 | INFO     | __main__:main:177 - ==================================
+2025-11-06 18:13:39.007 | INFO     | __main__:main:178 - STARTING prepare_customers_data.py
+2025-11-06 18:13:39.007 | INFO     | __main__:main:179 - ==================================
+2025-11-06 18:13:39.007 | INFO     | __main__:main:181 - Root         : C:\Repos\smart-store-rucu\src
+2025-11-06 18:13:39.008 | INFO     | __main__:main:182 - data/raw     : C:\Repos\smart-store-rucu\src\data\raw
+2025-11-06 18:13:39.008 | INFO     | __main__:main:183 - data/prepared: C:\Repos\smart-store-rucu\src\data\prepared
+2025-11-06 18:13:39.008 | INFO     | __main__:main:184 - scripts      : C:\Repos\smart-store-rucu\src\analytics_project
+2025-11-06 18:13:39.008 | INFO     | __main__:read_raw_data:64 - READING: C:\Repos\smart-store-rucu\src\data\raw\customers_data.csv.
+2025-11-06 18:13:39.011 | INFO     | __main__:main:196 - Initial dataframe columns: CustomerID, Name, Region, JoinDate, YearsWithCompany, PreferredChannel
+2025-11-06 18:13:39.012 | INFO     | __main__:main:197 - Initial dataframe shape: (209, 6)
+2025-11-06 18:13:39.012 | INFO     | __main__:remove_duplicates:100 - FUNCTION START: remove_duplicates with dataframe shape=(209, 6)
+2025-11-06 18:13:39.014 | INFO     | __main__:remove_duplicates:111 - Original dataframe shape: (209, 6)
+2025-11-06 18:13:39.014 | INFO     | __main__:remove_duplicates:112 - Deduped  dataframe shape: (201, 6)
+2025-11-06 18:13:39.014 | INFO     | __main__:handle_missing_values:128 - FUNCTION START: handle_missing_values with dataframe shape=(201, 6)
+2025-11-06 18:13:39.015 | INFO     | __main__:handle_missing_values:132 - Total missing values before handling: 5
+2025-11-06 18:13:39.022 | INFO     | __main__:handle_missing_values:141 - Total missing values after handling: 0
+2025-11-06 18:13:39.022 | INFO     | __main__:handle_missing_values:142 - 201 records remaining after handling missing values.
+2025-11-06 18:13:39.022 | INFO     | __main__:remove_outliers:156 - FUNCTION START: remove_outliers with dataframe shape=(201, 6)
+2025-11-06 18:13:39.022 | INFO     | __main__:remove_outliers:164 - Removed 0 outlier rows
+2025-11-06 18:13:39.023 | INFO     | __main__:remove_outliers:165 - 201 records remaining after removing outliers.
+2025-11-06 18:13:39.023 | INFO     | __main__:save_prepared_data:82 - FUNCTION START: save_prepared_data with file_name=customers_prepared.csv, dataframe shape=(201, 6)
+2025-11-06 18:13:39.025 | INFO     | __main__:save_prepared_data:85 - Data saved to C:\Repos\smart-store-rucu\src\data\prepared\customers_prepared.csv
+2025-11-06 18:13:39.025 | INFO     | __main__:main:220 - ==================================
+2025-11-06 18:13:39.025 | INFO     | __main__:main:221 - Original shape: (201, 6)
+2025-11-06 18:13:39.025 | INFO     | __main__:main:222 - Cleaned shape:  (209, 6)
+2025-11-06 18:13:39.026 | INFO     | __main__:main:223 - ==================================
+2025-11-06 18:13:39.026 | INFO     | __main__:main:224 - FINISHED prepare_customers_data.py
+2025-11-06 18:13:39.026 | INFO     | __main__:main:225 - ==================================
+2025-11-06 18:16:56.461 | INFO     | __main__:main:177 - ==================================
+2025-11-06 18:16:56.461 | INFO     | __main__:main:178 - STARTING prepare_customers_data.py
+2025-11-06 18:16:56.461 | INFO     | __main__:main:179 - ==================================
+2025-11-06 18:16:56.462 | INFO     | __main__:main:181 - Root         : C:\Repos\smart-store-rucu\src
+2025-11-06 18:16:56.462 | INFO     | __main__:main:182 - data/raw     : C:\Repos\smart-store-rucu\src\data\raw
+2025-11-06 18:16:56.462 | INFO     | __main__:main:183 - data/prepared: C:\Repos\smart-store-rucu\src\data\prepared
+2025-11-06 18:16:56.462 | INFO     | __main__:main:184 - scripts      : C:\Repos\smart-store-rucu\src\analytics_project
+2025-11-06 18:16:56.463 | INFO     | __main__:read_raw_data:64 - READING: C:\Repos\smart-store-rucu\src\data\raw\customers_data.csv.
+2025-11-06 18:16:56.481 | INFO     | __main__:main:196 - Initial dataframe columns: CustomerID, Name, Region, JoinDate, YearsWithCompany, PreferredChannel
+2025-11-06 18:16:56.482 | INFO     | __main__:main:197 - Initial dataframe shape: (209, 6)
+2025-11-06 18:16:56.482 | INFO     | __main__:remove_duplicates:100 - FUNCTION START: remove_duplicates with dataframe shape=(209, 6)
+2025-11-06 18:16:56.487 | INFO     | __main__:remove_duplicates:111 - Original dataframe shape: (209, 6)
+2025-11-06 18:16:56.487 | INFO     | __main__:remove_duplicates:112 - Deduped  dataframe shape: (201, 6)
+2025-11-06 18:16:56.488 | INFO     | __main__:handle_missing_values:128 - FUNCTION START: handle_missing_values with dataframe shape=(201, 6)
+2025-11-06 18:16:56.489 | INFO     | __main__:handle_missing_values:132 - Total missing values before handling: 5
+2025-11-06 18:16:56.492 | INFO     | __main__:handle_missing_values:141 - Total missing values after handling: 0
+2025-11-06 18:16:56.493 | INFO     | __main__:handle_missing_values:142 - 201 records remaining after handling missing values.
+2025-11-06 18:16:56.493 | INFO     | __main__:remove_outliers:156 - FUNCTION START: remove_outliers with dataframe shape=(201, 6)
+2025-11-06 18:16:56.493 | INFO     | __main__:remove_outliers:164 - Removed 0 outlier rows
+2025-11-06 18:16:56.493 | INFO     | __main__:remove_outliers:165 - 201 records remaining after removing outliers.
+2025-11-06 18:16:56.494 | INFO     | __main__:save_prepared_data:82 - FUNCTION START: save_prepared_data with file_name=customers_prepared.csv, dataframe shape=(201, 6)
+2025-11-06 18:16:56.496 | INFO     | __main__:save_prepared_data:85 - Data saved to C:\Repos\smart-store-rucu\src\data\prepared\customers_prepared.csv
+2025-11-06 18:16:56.496 | INFO     | __main__:main:220 - ==================================
+2025-11-06 18:16:56.497 | INFO     | __main__:main:221 - Original shape: (201, 6)
+2025-11-06 18:16:56.497 | INFO     | __main__:main:222 - Cleaned shape:  (209, 6)
+2025-11-06 18:16:56.497 | INFO     | __main__:main:223 - ==================================
+2025-11-06 18:16:56.497 | INFO     | __main__:main:224 - FINISHED prepare_customers_data.py
+2025-11-06 18:16:56.497 | INFO     | __main__:main:225 - ==================================
+2025-11-06 18:29:49.340 | INFO     | __main__:main:189 - ==================================
+2025-11-06 18:29:49.340 | INFO     | __main__:main:190 - STARTING prepare_customers_data.py
+2025-11-06 18:29:49.340 | INFO     | __main__:main:191 - ==================================
+2025-11-06 18:29:49.341 | INFO     | __main__:main:193 - Root         : C:\Repos\smart-store-rucu\src
+2025-11-06 18:29:49.341 | INFO     | __main__:main:194 - data/raw     : C:\Repos\smart-store-rucu\src\data\raw
+2025-11-06 18:29:49.341 | INFO     | __main__:main:195 - data/prepared: C:\Repos\smart-store-rucu\src\data\prepared
+2025-11-06 18:29:49.341 | INFO     | __main__:main:196 - scripts      : C:\Repos\smart-store-rucu\src\analytics_project
+2025-11-06 18:29:49.341 | INFO     | __main__:read_raw_data:64 - READING: C:\Repos\smart-store-rucu\src\data\raw\customers_data.csv.
+2025-11-06 18:29:49.344 | INFO     | __main__:main:208 - Initial dataframe columns: CustomerID, Name, Region, JoinDate, YearsWithCompany, PreferredChannel
+2025-11-06 18:29:49.345 | INFO     | __main__:main:209 - Initial dataframe shape: (209, 6)
+2025-11-06 18:29:49.345 | INFO     | __main__:remove_duplicates:100 - FUNCTION START: remove_duplicates with dataframe shape=(209, 6)
+2025-11-06 18:29:49.346 | INFO     | __main__:remove_duplicates:111 - Original dataframe shape: (209, 6)
+2025-11-06 18:29:49.347 | INFO     | __main__:remove_duplicates:112 - Deduped  dataframe shape: (201, 6)
+2025-11-06 18:29:49.347 | INFO     | __main__:handle_missing_values:128 - FUNCTION START: handle_missing_values with dataframe shape=(201, 6)
+2025-11-06 18:29:49.348 | INFO     | __main__:handle_missing_values:132 - Total missing values before handling: 5
+2025-11-06 18:29:49.353 | INFO     | __main__:handle_missing_values:153 - Total missing values after handling: 0
+2025-11-06 18:29:49.354 | INFO     | __main__:handle_missing_values:154 - 201 records remaining after handling missing values.
+2025-11-06 18:29:49.354 | INFO     | __main__:remove_outliers:168 - FUNCTION START: remove_outliers with dataframe shape=(201, 6)
+2025-11-06 18:29:49.354 | INFO     | __main__:remove_outliers:176 - Removed 0 outlier rows
+2025-11-06 18:29:49.354 | INFO     | __main__:remove_outliers:177 - 201 records remaining after removing outliers.
+2025-11-06 18:29:49.355 | INFO     | __main__:save_prepared_data:82 - FUNCTION START: save_prepared_data with file_name=customers_prepared.csv, dataframe shape=(201, 6)
+2025-11-06 18:29:49.357 | INFO     | __main__:save_prepared_data:85 - Data saved to C:\Repos\smart-store-rucu\src\data\prepared\customers_prepared.csv
+2025-11-06 18:29:49.358 | INFO     | __main__:main:232 - ==================================
+2025-11-06 18:29:49.358 | INFO     | __main__:main:233 - Original shape: (201, 6)
+2025-11-06 18:29:49.358 | INFO     | __main__:main:234 - Cleaned shape:  (209, 6)
+2025-11-06 18:29:49.358 | INFO     | __main__:main:235 - ==================================
+2025-11-06 18:29:49.358 | INFO     | __main__:main:236 - FINISHED prepare_customers_data.py
+2025-11-06 18:29:49.359 | INFO     | __main__:main:237 - ==================================
+2025-11-06 19:02:27.682 | INFO     | __main__:main:238 - ==================================
+2025-11-06 19:02:27.682 | INFO     | __main__:main:239 - STARTING prepare_products_data.py
+2025-11-06 19:02:27.682 | INFO     | __main__:main:240 - ==================================
+2025-11-06 19:02:27.682 | INFO     | __main__:main:242 - Root         : C:\Repos\smart-store-rucu\src
+2025-11-06 19:02:27.682 | INFO     | __main__:main:243 - data/raw     : C:\Repos\smart-store-rucu\src\data\raw
+2025-11-06 19:02:27.682 | INFO     | __main__:main:244 - data/prepared: C:\Repos\smart-store-rucu\src\data\prepared
+2025-11-06 19:02:27.683 | INFO     | __main__:main:245 - scripts      : C:\Repos\smart-store-rucu\src\analytics_project
+2025-11-06 19:02:27.683 | INFO     | __main__:read_raw_data:70 - FUNCTION START: read_raw_data with file_name=products_data.csv
+2025-11-06 19:02:27.683 | INFO     | __main__:read_raw_data:72 - Reading data from C:\Repos\smart-store-rucu\src\data\raw\products_data.csv
+2025-11-06 19:02:27.686 | INFO     | __main__:read_raw_data:74 - Loaded dataframe with 119 rows and 6 columns
+2025-11-06 19:02:27.687 | INFO     | __main__:read_raw_data:79 - Column datatypes: 
+ProductID         float64
+ProductName        object
+Category           object
+UnitPrice         float64
+YearIntroduced      int64
+SupplierRegion     object
+dtype: object
+2025-11-06 19:02:27.690 | INFO     | __main__:read_raw_data:80 - Number of unique values: 
+ProductID         104
+ProductName        98
+Category            9
+UnitPrice         107
+YearIntroduced     17
+SupplierRegion      9
+dtype: int64
+2025-11-06 19:02:27.691 | INFO     | __main__:read_raw_data:70 - FUNCTION START: read_raw_data with file_name=products_data.csv
+2025-11-06 19:02:27.691 | INFO     | __main__:read_raw_data:72 - Reading data from C:\Repos\smart-store-rucu\src\data\raw\products_data.csv
+2025-11-06 19:02:27.693 | INFO     | __main__:read_raw_data:74 - Loaded dataframe with 119 rows and 6 columns
+2025-11-06 19:02:27.694 | INFO     | __main__:read_raw_data:79 - Column datatypes: 
+ProductID         float64
+ProductName        object
+Category           object
+UnitPrice         float64
+YearIntroduced      int64
+SupplierRegion     object
+dtype: object
+2025-11-06 19:02:27.698 | INFO     | __main__:read_raw_data:80 - Number of unique values: 
+ProductID         104
+ProductName        98
+Category            9
+UnitPrice         107
+YearIntroduced     17
+SupplierRegion      9
+dtype: int64
+2025-11-06 19:02:27.699 | INFO     | __main__:main:260 - Initial dataframe columns: ProductID, ProductName, Category, UnitPrice, YearIntroduced, SupplierRegion
+2025-11-06 19:02:27.699 | INFO     | __main__:main:261 - Initial dataframe shape: (119, 6)
+2025-11-06 19:02:27.700 | INFO     | __main__:main:270 - Cleaned column names: ProductID -> productid, ProductName -> productname, Category -> category, UnitPrice -> unitprice, YearIntroduced -> yearintroduced, SupplierRegion -> supplierregion
+2025-11-06 19:02:27.700 | INFO     | __main__:remove_duplicates:107 - FUNCTION START: remove_duplicates with dataframe shape=(119, 6)
+2025-11-06 19:09:05.245 | INFO     | __main__:main:239 - ==================================
+2025-11-06 19:09:05.246 | INFO     | __main__:main:240 - STARTING prepare_products_data.py
+2025-11-06 19:09:05.246 | INFO     | __main__:main:241 - ==================================
+2025-11-06 19:09:05.246 | INFO     | __main__:main:243 - Root         : C:\Repos\smart-store-rucu\src
+2025-11-06 19:09:05.246 | INFO     | __main__:main:244 - data/raw     : C:\Repos\smart-store-rucu\src\data\raw
+2025-11-06 19:09:05.246 | INFO     | __main__:main:245 - data/prepared: C:\Repos\smart-store-rucu\src\data\prepared
+2025-11-06 19:09:05.246 | INFO     | __main__:main:246 - scripts      : C:\Repos\smart-store-rucu\src\analytics_project
+2025-11-06 19:09:05.246 | INFO     | __main__:read_raw_data:70 - FUNCTION START: read_raw_data with file_name=products_data.csv
+2025-11-06 19:09:05.247 | INFO     | __main__:read_raw_data:72 - Reading data from C:\Repos\smart-store-rucu\src\data\raw\products_data.csv
+2025-11-06 19:09:05.250 | INFO     | __main__:read_raw_data:74 - Loaded dataframe with 119 rows and 6 columns
+2025-11-06 19:09:05.250 | INFO     | __main__:read_raw_data:75 - Columns in raw DataFrame : ['ProductID', 'ProductName', 'Category', 'UnitPrice', 'YearIntroduced', 'SupplierRegion']
+2025-11-06 19:09:05.251 | INFO     | __main__:read_raw_data:80 - Column datatypes: 
+ProductID         float64
+ProductName        object
+Category           object
+UnitPrice         float64
+YearIntroduced      int64
+SupplierRegion     object
+dtype: object
+2025-11-06 19:09:05.252 | INFO     | __main__:read_raw_data:81 - Number of unique values: 
+ProductID         104
+ProductName        98
+Category            9
+UnitPrice         107
+YearIntroduced     17
+SupplierRegion      9
+dtype: int64
+2025-11-06 19:09:05.253 | INFO     | __main__:read_raw_data:70 - FUNCTION START: read_raw_data with file_name=products_data.csv
+2025-11-06 19:09:05.253 | INFO     | __main__:read_raw_data:72 - Reading data from C:\Repos\smart-store-rucu\src\data\raw\products_data.csv
+2025-11-06 19:09:05.254 | INFO     | __main__:read_raw_data:74 - Loaded dataframe with 119 rows and 6 columns
+2025-11-06 19:09:05.255 | INFO     | __main__:read_raw_data:75 - Columns in raw DataFrame : ['ProductID', 'ProductName', 'Category', 'UnitPrice', 'YearIntroduced', 'SupplierRegion']
+2025-11-06 19:09:05.255 | INFO     | __main__:read_raw_data:80 - Column datatypes: 
+ProductID         float64
+ProductName        object
+Category           object
+UnitPrice         float64
+YearIntroduced      int64
+SupplierRegion     object
+dtype: object
+2025-11-06 19:09:05.257 | INFO     | __main__:read_raw_data:81 - Number of unique values: 
+ProductID         104
+ProductName        98
+Category            9
+UnitPrice         107
+YearIntroduced     17
+SupplierRegion      9
+dtype: int64
+2025-11-06 19:09:05.258 | INFO     | __main__:main:261 - Initial dataframe columns: ProductID, ProductName, Category, UnitPrice, YearIntroduced, SupplierRegion
+2025-11-06 19:09:05.258 | INFO     | __main__:main:262 - Initial dataframe shape: (119, 6)
+2025-11-06 19:09:05.259 | INFO     | __main__:main:271 - Cleaned column names: ProductID -> productid, ProductName -> productname, Category -> category, UnitPrice -> unitprice, YearIntroduced -> yearintroduced, SupplierRegion -> supplierregion
+2025-11-06 19:09:05.259 | INFO     | __main__:remove_duplicates:108 - FUNCTION START: remove_duplicates with dataframe shape=(119, 6)
+2025-11-06 19:21:44.285 | INFO     | __main__:main:241 - ==================================
+2025-11-06 19:21:44.286 | INFO     | __main__:main:242 - STARTING prepare_products_data.py
+2025-11-06 19:21:44.286 | INFO     | __main__:main:243 - ==================================
+2025-11-06 19:21:44.286 | INFO     | __main__:main:245 - Root         : C:\Repos\smart-store-rucu\src
+2025-11-06 19:21:44.287 | INFO     | __main__:main:246 - data/raw     : C:\Repos\smart-store-rucu\src\data\raw
+2025-11-06 19:21:44.287 | INFO     | __main__:main:247 - data/prepared: C:\Repos\smart-store-rucu\src\data\prepared
+2025-11-06 19:21:44.287 | INFO     | __main__:main:248 - scripts      : C:\Repos\smart-store-rucu\src\analytics_project
+2025-11-06 19:21:44.287 | INFO     | __main__:read_raw_data:70 - FUNCTION START: read_raw_data with file_name=products_data.csv
+2025-11-06 19:21:44.287 | INFO     | __main__:read_raw_data:72 - Reading data from C:\Repos\smart-store-rucu\src\data\raw\products_data.csv
+2025-11-06 19:21:44.290 | INFO     | __main__:read_raw_data:74 - Loaded dataframe with 119 rows and 6 columns
+2025-11-06 19:21:44.290 | INFO     | __main__:read_raw_data:75 - Columns in raw DataFrame : ['ProductID', 'ProductName', 'Category', 'UnitPrice', 'YearIntroduced', 'SupplierRegion']
+2025-11-06 19:21:44.296 | INFO     | __main__:read_raw_data:82 - Column datatypes: 
+productid         float64
+productname        object
+category           object
+unitprice         float64
+yearintroduced      int64
+supplierregion     object
+dtype: object
+2025-11-06 19:21:44.298 | INFO     | __main__:read_raw_data:83 - Number of unique values: 
+productid         104
+productname        98
+category            9
+unitprice         107
+yearintroduced     17
+supplierregion      9
+dtype: int64
+2025-11-06 19:21:44.299 | INFO     | __main__:read_raw_data:70 - FUNCTION START: read_raw_data with file_name=products_data.csv
+2025-11-06 19:21:44.299 | INFO     | __main__:read_raw_data:72 - Reading data from C:\Repos\smart-store-rucu\src\data\raw\products_data.csv
+2025-11-06 19:21:44.301 | INFO     | __main__:read_raw_data:74 - Loaded dataframe with 119 rows and 6 columns
+2025-11-06 19:21:44.301 | INFO     | __main__:read_raw_data:75 - Columns in raw DataFrame : ['ProductID', 'ProductName', 'Category', 'UnitPrice', 'YearIntroduced', 'SupplierRegion']
+2025-11-06 19:21:44.303 | INFO     | __main__:read_raw_data:82 - Column datatypes: 
+productid         float64
+productname        object
+category           object
+unitprice         float64
+yearintroduced      int64
+supplierregion     object
+dtype: object
+2025-11-06 19:21:44.305 | INFO     | __main__:read_raw_data:83 - Number of unique values: 
+productid         104
+productname        98
+category            9
+unitprice         107
+yearintroduced     17
+supplierregion      9
+dtype: int64
+2025-11-06 19:21:44.305 | INFO     | __main__:main:263 - Initial dataframe columns: productid, productname, category, unitprice, yearintroduced, supplierregion
+2025-11-06 19:21:44.305 | INFO     | __main__:main:264 - Initial dataframe shape: (119, 6)
+2025-11-06 19:21:44.306 | INFO     | __main__:remove_duplicates:110 - FUNCTION START: remove_duplicates with dataframe shape=(119, 6)
+2025-11-06 19:28:50.784 | INFO     | __main__:main:240 - ==================================
+2025-11-06 19:28:50.785 | INFO     | __main__:main:241 - STARTING prepare_products_data.py
+2025-11-06 19:28:50.785 | INFO     | __main__:main:242 - ==================================
+2025-11-06 19:28:50.785 | INFO     | __main__:main:244 - Root         : C:\Repos\smart-store-rucu\src
+2025-11-06 19:28:50.785 | INFO     | __main__:main:245 - data/raw     : C:\Repos\smart-store-rucu\src\data\raw
+2025-11-06 19:28:50.786 | INFO     | __main__:main:246 - data/prepared: C:\Repos\smart-store-rucu\src\data\prepared
+2025-11-06 19:28:50.786 | INFO     | __main__:main:247 - scripts      : C:\Repos\smart-store-rucu\src\analytics_project
+2025-11-06 19:28:50.786 | INFO     | __main__:read_raw_data:70 - FUNCTION START: read_raw_data with file_name=products_data.csv
+2025-11-06 19:28:50.786 | INFO     | __main__:read_raw_data:72 - Reading data from C:\Repos\smart-store-rucu\src\data\raw\products_data.csv
+2025-11-06 19:28:50.789 | INFO     | __main__:read_raw_data:74 - Loaded dataframe with 119 rows and 6 columns
+2025-11-06 19:28:50.790 | INFO     | __main__:read_raw_data:75 - Columns in raw DataFrame : ['ProductID', 'ProductName', 'Category', 'UnitPrice', 'YearIntroduced', 'SupplierRegion']
+2025-11-06 19:28:50.792 | INFO     | __main__:read_raw_data:81 - Column datatypes: 
+ProductID         float64
+ProductName        object
+Category           object
+UnitPrice         float64
+YearIntroduced      int64
+SupplierRegion     object
+dtype: object
+2025-11-06 19:28:50.793 | INFO     | __main__:read_raw_data:82 - Number of unique values: 
+ProductID         104
+ProductName        98
+Category            9
+UnitPrice         107
+YearIntroduced     17
+SupplierRegion      9
+dtype: int64
+2025-11-06 19:28:50.794 | INFO     | __main__:read_raw_data:70 - FUNCTION START: read_raw_data with file_name=products_data.csv
+2025-11-06 19:28:50.794 | INFO     | __main__:read_raw_data:72 - Reading data from C:\Repos\smart-store-rucu\src\data\raw\products_data.csv
+2025-11-06 19:28:50.796 | INFO     | __main__:read_raw_data:74 - Loaded dataframe with 119 rows and 6 columns
+2025-11-06 19:28:50.796 | INFO     | __main__:read_raw_data:75 - Columns in raw DataFrame : ['ProductID', 'ProductName', 'Category', 'UnitPrice', 'YearIntroduced', 'SupplierRegion']
+2025-11-06 19:28:50.798 | INFO     | __main__:read_raw_data:81 - Column datatypes: 
+ProductID         float64
+ProductName        object
+Category           object
+UnitPrice         float64
+YearIntroduced      int64
+SupplierRegion     object
+dtype: object
+2025-11-06 19:28:50.799 | INFO     | __main__:read_raw_data:82 - Number of unique values: 
+ProductID         104
+ProductName        98
+Category            9
+UnitPrice         107
+YearIntroduced     17
+SupplierRegion      9
+dtype: int64
+2025-11-06 19:28:50.800 | INFO     | __main__:main:262 - Initial dataframe columns: ProductID, ProductName, Category, UnitPrice, YearIntroduced, SupplierRegion
+2025-11-06 19:28:50.800 | INFO     | __main__:main:263 - Initial dataframe shape: (119, 6)
+2025-11-06 19:28:50.800 | INFO     | __main__:main:272 - Cleaned column names: ProductID -> productid, ProductName -> productname, Category -> category, UnitPrice -> unitprice, YearIntroduced -> yearintroduced, SupplierRegion -> supplierregion
+2025-11-06 19:28:50.801 | INFO     | __main__:remove_duplicates:109 - FUNCTION START: remove_duplicates with dataframe shape=(119, 6)
+2025-11-06 19:38:28.881 | INFO     | __main__:main:240 - ==================================
+2025-11-06 19:38:28.881 | INFO     | __main__:main:241 - STARTING prepare_products_data.py
+2025-11-06 19:38:28.882 | INFO     | __main__:main:242 - ==================================
+2025-11-06 19:38:28.882 | INFO     | __main__:main:244 - Root         : C:\Repos\smart-store-rucu\src
+2025-11-06 19:38:28.882 | INFO     | __main__:main:245 - data/raw     : C:\Repos\smart-store-rucu\src\data\raw
+2025-11-06 19:38:28.882 | INFO     | __main__:main:246 - data/prepared: C:\Repos\smart-store-rucu\src\data\prepared
+2025-11-06 19:38:28.882 | INFO     | __main__:main:247 - scripts      : C:\Repos\smart-store-rucu\src\analytics_project
+2025-11-06 19:38:28.882 | INFO     | __main__:read_raw_data:70 - FUNCTION START: read_raw_data with file_name=products_data.csv
+2025-11-06 19:38:28.883 | INFO     | __main__:read_raw_data:72 - Reading data from C:\Repos\smart-store-rucu\src\data\raw\products_data.csv
+2025-11-06 19:38:28.886 | INFO     | __main__:read_raw_data:74 - Loaded dataframe with 119 rows and 6 columns
+2025-11-06 19:38:28.886 | INFO     | __main__:read_raw_data:75 - Columns in raw DataFrame : ['ProductID', 'ProductName', 'Category', 'UnitPrice', 'YearIntroduced', 'SupplierRegion']
+2025-11-06 19:38:28.887 | INFO     | __main__:read_raw_data:81 - Column datatypes: 
+ProductID         float64
+ProductName        object
+Category           object
+UnitPrice         float64
+YearIntroduced      int64
+SupplierRegion     object
+dtype: object
+2025-11-06 19:38:28.888 | INFO     | __main__:read_raw_data:82 - Number of unique values: 
+ProductID         104
+ProductName        98
+Category            9
+UnitPrice         107
+YearIntroduced     17
+SupplierRegion      9
+dtype: int64
+2025-11-06 19:38:28.888 | INFO     | __main__:read_raw_data:70 - FUNCTION START: read_raw_data with file_name=products_data.csv
+2025-11-06 19:38:28.888 | INFO     | __main__:read_raw_data:72 - Reading data from C:\Repos\smart-store-rucu\src\data\raw\products_data.csv
+2025-11-06 19:38:28.891 | INFO     | __main__:read_raw_data:74 - Loaded dataframe with 119 rows and 6 columns
+2025-11-06 19:38:28.892 | INFO     | __main__:read_raw_data:75 - Columns in raw DataFrame : ['ProductID', 'ProductName', 'Category', 'UnitPrice', 'YearIntroduced', 'SupplierRegion']
+2025-11-06 19:38:28.893 | INFO     | __main__:read_raw_data:81 - Column datatypes: 
+ProductID         float64
+ProductName        object
+Category           object
+UnitPrice         float64
+YearIntroduced      int64
+SupplierRegion     object
+dtype: object
+2025-11-06 19:38:28.894 | INFO     | __main__:read_raw_data:82 - Number of unique values: 
+ProductID         104
+ProductName        98
+Category            9
+UnitPrice         107
+YearIntroduced     17
+SupplierRegion      9
+dtype: int64
+2025-11-06 19:38:28.894 | INFO     | __main__:main:262 - Initial dataframe columns: ProductID, ProductName, Category, UnitPrice, YearIntroduced, SupplierRegion
+2025-11-06 19:38:28.894 | INFO     | __main__:main:263 - Initial dataframe shape: (119, 6)
+2025-11-06 19:38:28.895 | INFO     | __main__:main:272 - Cleaned column names: ProductID -> productid, ProductName -> productname, Category -> category, UnitPrice -> unitprice, YearIntroduced -> yearintroduced, SupplierRegion -> supplierregion
+2025-11-06 19:38:28.895 | INFO     | __main__:remove_duplicates:109 - FUNCTION START: remove_duplicates with dataframe shape=(119, 6)
+2025-11-06 19:48:50.378 | INFO     | __main__:main:240 - ==================================
+2025-11-06 19:48:50.378 | INFO     | __main__:main:241 - STARTING prepare_products_data.py
+2025-11-06 19:48:50.378 | INFO     | __main__:main:242 - ==================================
+2025-11-06 19:48:50.378 | INFO     | __main__:main:244 - Root         : C:\Repos\smart-store-rucu\src
+2025-11-06 19:48:50.379 | INFO     | __main__:main:245 - data/raw     : C:\Repos\smart-store-rucu\src\data\raw
+2025-11-06 19:48:50.379 | INFO     | __main__:main:246 - data/prepared: C:\Repos\smart-store-rucu\src\data\prepared
+2025-11-06 19:48:50.379 | INFO     | __main__:main:247 - scripts      : C:\Repos\smart-store-rucu\src\analytics_project
+2025-11-06 19:48:50.379 | INFO     | __main__:read_raw_data:70 - FUNCTION START: read_raw_data with file_name=products_data.csv
+2025-11-06 19:48:50.379 | INFO     | __main__:read_raw_data:72 - Reading data from C:\Repos\smart-store-rucu\src\data\raw\products_data.csv
+2025-11-06 19:48:50.383 | INFO     | __main__:read_raw_data:74 - Loaded dataframe with 119 rows and 6 columns
+2025-11-06 19:48:50.383 | INFO     | __main__:read_raw_data:75 - Columns in raw DataFrame : ['ProductID', 'ProductName', 'Category', 'UnitPrice', 'YearIntroduced', 'SupplierRegion']
+2025-11-06 19:48:50.384 | INFO     | __main__:read_raw_data:81 - Column datatypes: 
+ProductID         float64
+ProductName        object
+Category           object
+UnitPrice         float64
+YearIntroduced      int64
+SupplierRegion     object
+dtype: object
+2025-11-06 19:48:50.386 | INFO     | __main__:read_raw_data:82 - Number of unique values: 
+ProductID         104
+ProductName        98
+Category            9
+UnitPrice         107
+YearIntroduced     17
+SupplierRegion      9
+dtype: int64
+2025-11-06 19:48:50.386 | INFO     | __main__:read_raw_data:70 - FUNCTION START: read_raw_data with file_name=products_data.csv
+2025-11-06 19:48:50.386 | INFO     | __main__:read_raw_data:72 - Reading data from C:\Repos\smart-store-rucu\src\data\raw\products_data.csv
+2025-11-06 19:48:50.389 | INFO     | __main__:read_raw_data:74 - Loaded dataframe with 119 rows and 6 columns
+2025-11-06 19:48:50.389 | INFO     | __main__:read_raw_data:75 - Columns in raw DataFrame : ['ProductID', 'ProductName', 'Category', 'UnitPrice', 'YearIntroduced', 'SupplierRegion']
+2025-11-06 19:48:50.390 | INFO     | __main__:read_raw_data:81 - Column datatypes: 
+ProductID         float64
+ProductName        object
+Category           object
+UnitPrice         float64
+YearIntroduced      int64
+SupplierRegion     object
+dtype: object
+2025-11-06 19:48:50.391 | INFO     | __main__:read_raw_data:82 - Number of unique values: 
+ProductID         104
+ProductName        98
+Category            9
+UnitPrice         107
+YearIntroduced     17
+SupplierRegion      9
+dtype: int64
+2025-11-06 19:48:50.391 | INFO     | __main__:main:262 - Initial dataframe columns: ProductID, ProductName, Category, UnitPrice, YearIntroduced, SupplierRegion
+2025-11-06 19:48:50.391 | INFO     | __main__:main:263 - Initial dataframe shape: (119, 6)
+2025-11-06 19:48:50.392 | INFO     | __main__:main:272 - Cleaned column names: ProductID -> productid, ProductName -> productname, Category -> category, UnitPrice -> unitprice, YearIntroduced -> yearintroduced, SupplierRegion -> supplierregion
+2025-11-06 19:48:50.392 | INFO     | __main__:remove_duplicates:109 - FUNCTION START: remove_duplicates with dataframe shape=(119, 6)
+2025-11-06 19:48:50.397 | INFO     | __main__:remove_duplicates:119 - Removed 14 duplicate rows
+2025-11-06 19:48:50.397 | INFO     | __main__:remove_duplicates:120 - 105 records remaining after removing duplicates.
+2025-11-06 19:48:50.397 | INFO     | __main__:handle_missing_values:134 - FUNCTION START: handle_missing_values with dataframe shape=(105, 6)
+2025-11-06 19:48:50.398 | INFO     | __main__:handle_missing_values:139 - Missing values by column before handling:
+productid         1
+productname       2
+category          1
+unitprice         3
+yearintroduced    0
+supplierregion    0
+dtype: int64
+2025-11-06 19:49:59.447 | INFO     | __main__:main:240 - ==================================
+2025-11-06 19:49:59.447 | INFO     | __main__:main:241 - STARTING prepare_products_data.py
+2025-11-06 19:49:59.448 | INFO     | __main__:main:242 - ==================================
+2025-11-06 19:49:59.448 | INFO     | __main__:main:244 - Root         : C:\Repos\smart-store-rucu\src
+2025-11-06 19:49:59.448 | INFO     | __main__:main:245 - data/raw     : C:\Repos\smart-store-rucu\src\data\raw
+2025-11-06 19:49:59.448 | INFO     | __main__:main:246 - data/prepared: C:\Repos\smart-store-rucu\src\data\prepared
+2025-11-06 19:49:59.448 | INFO     | __main__:main:247 - scripts      : C:\Repos\smart-store-rucu\src\analytics_project
+2025-11-06 19:49:59.449 | INFO     | __main__:read_raw_data:70 - FUNCTION START: read_raw_data with file_name=products_data.csv
+2025-11-06 19:49:59.449 | INFO     | __main__:read_raw_data:72 - Reading data from C:\Repos\smart-store-rucu\src\data\raw\products_data.csv
+2025-11-06 19:49:59.452 | INFO     | __main__:read_raw_data:74 - Loaded dataframe with 119 rows and 6 columns
+2025-11-06 19:49:59.452 | INFO     | __main__:read_raw_data:75 - Columns in raw DataFrame : ['ProductID', 'ProductName', 'Category', 'UnitPrice', 'YearIntroduced', 'SupplierRegion']
+2025-11-06 19:49:59.453 | INFO     | __main__:read_raw_data:81 - Column datatypes: 
+ProductID         float64
+ProductName        object
+Category           object
+UnitPrice         float64
+YearIntroduced      int64
+SupplierRegion     object
+dtype: object
+2025-11-06 19:49:59.454 | INFO     | __main__:read_raw_data:82 - Number of unique values: 
+ProductID         104
+ProductName        98
+Category            9
+UnitPrice         107
+YearIntroduced     17
+SupplierRegion      9
+dtype: int64
+2025-11-06 19:49:59.454 | INFO     | __main__:read_raw_data:70 - FUNCTION START: read_raw_data with file_name=products_data.csv
+2025-11-06 19:49:59.454 | INFO     | __main__:read_raw_data:72 - Reading data from C:\Repos\smart-store-rucu\src\data\raw\products_data.csv
+2025-11-06 19:49:59.456 | INFO     | __main__:read_raw_data:74 - Loaded dataframe with 119 rows and 6 columns
+2025-11-06 19:49:59.456 | INFO     | __main__:read_raw_data:75 - Columns in raw DataFrame : ['ProductID', 'ProductName', 'Category', 'UnitPrice', 'YearIntroduced', 'SupplierRegion']
+2025-11-06 19:49:59.457 | INFO     | __main__:read_raw_data:81 - Column datatypes: 
+ProductID         float64
+ProductName        object
+Category           object
+UnitPrice         float64
+YearIntroduced      int64
+SupplierRegion     object
+dtype: object
+2025-11-06 19:49:59.458 | INFO     | __main__:read_raw_data:82 - Number of unique values: 
+ProductID         104
+ProductName        98
+Category            9
+UnitPrice         107
+YearIntroduced     17
+SupplierRegion      9
+dtype: int64
+2025-11-06 19:49:59.458 | INFO     | __main__:main:262 - Initial dataframe columns: ProductID, ProductName, Category, UnitPrice, YearIntroduced, SupplierRegion
+2025-11-06 19:49:59.459 | INFO     | __main__:main:263 - Initial dataframe shape: (119, 6)
+2025-11-06 19:49:59.459 | INFO     | __main__:main:272 - Cleaned column names: ProductID -> productid, ProductName -> productname, Category -> category, UnitPrice -> unitprice, YearIntroduced -> yearintroduced, SupplierRegion -> supplierregion
+2025-11-06 19:49:59.459 | INFO     | __main__:remove_duplicates:109 - FUNCTION START: remove_duplicates with dataframe shape=(119, 6)
+2025-11-06 19:49:59.461 | INFO     | __main__:remove_duplicates:119 - Removed 14 duplicate rows
+2025-11-06 19:49:59.461 | INFO     | __main__:remove_duplicates:120 - 105 records remaining after removing duplicates.
+2025-11-06 19:49:59.461 | INFO     | __main__:handle_missing_values:134 - FUNCTION START: handle_missing_values with dataframe shape=(105, 6)
+2025-11-06 19:49:59.462 | INFO     | __main__:handle_missing_values:139 - Missing values by column before handling:
+productid         1
+productname       2
+category          1
+unitprice         3
+yearintroduced    0
+supplierregion    0
+dtype: int64
+2025-11-06 19:50:21.748 | INFO     | __main__:main:240 - ==================================
+2025-11-06 19:50:21.748 | INFO     | __main__:main:241 - STARTING prepare_products_data.py
+2025-11-06 19:50:21.748 | INFO     | __main__:main:242 - ==================================
+2025-11-06 19:50:21.749 | INFO     | __main__:main:244 - Root         : C:\Repos\smart-store-rucu\src
+2025-11-06 19:50:21.749 | INFO     | __main__:main:245 - data/raw     : C:\Repos\smart-store-rucu\src\data\raw
+2025-11-06 19:50:21.749 | INFO     | __main__:main:246 - data/prepared: C:\Repos\smart-store-rucu\src\data\prepared
+2025-11-06 19:50:21.749 | INFO     | __main__:main:247 - scripts      : C:\Repos\smart-store-rucu\src\analytics_project
+2025-11-06 19:50:21.750 | INFO     | __main__:read_raw_data:70 - FUNCTION START: read_raw_data with file_name=products_data.csv
+2025-11-06 19:50:21.750 | INFO     | __main__:read_raw_data:72 - Reading data from C:\Repos\smart-store-rucu\src\data\raw\products_data.csv
+2025-11-06 19:50:21.753 | INFO     | __main__:read_raw_data:74 - Loaded dataframe with 119 rows and 6 columns
+2025-11-06 19:50:21.753 | INFO     | __main__:read_raw_data:75 - Columns in raw DataFrame : ['ProductID', 'ProductName', 'Category', 'UnitPrice', 'YearIntroduced', 'SupplierRegion']
+2025-11-06 19:50:21.754 | INFO     | __main__:read_raw_data:81 - Column datatypes: 
+ProductID         float64
+ProductName        object
+Category           object
+UnitPrice         float64
+YearIntroduced      int64
+SupplierRegion     object
+dtype: object
+2025-11-06 19:50:21.755 | INFO     | __main__:read_raw_data:82 - Number of unique values: 
+ProductID         104
+ProductName        98
+Category            9
+UnitPrice         107
+YearIntroduced     17
+SupplierRegion      9
+dtype: int64
+2025-11-06 19:50:21.755 | INFO     | __main__:read_raw_data:70 - FUNCTION START: read_raw_data with file_name=products_data.csv
+2025-11-06 19:50:21.756 | INFO     | __main__:read_raw_data:72 - Reading data from C:\Repos\smart-store-rucu\src\data\raw\products_data.csv
+2025-11-06 19:50:21.758 | INFO     | __main__:read_raw_data:74 - Loaded dataframe with 119 rows and 6 columns
+2025-11-06 19:50:21.759 | INFO     | __main__:read_raw_data:75 - Columns in raw DataFrame : ['ProductID', 'ProductName', 'Category', 'UnitPrice', 'YearIntroduced', 'SupplierRegion']
+2025-11-06 19:50:21.759 | INFO     | __main__:read_raw_data:81 - Column datatypes: 
+ProductID         float64
+ProductName        object
+Category           object
+UnitPrice         float64
+YearIntroduced      int64
+SupplierRegion     object
+dtype: object
+2025-11-06 19:50:21.761 | INFO     | __main__:read_raw_data:82 - Number of unique values: 
+ProductID         104
+ProductName        98
+Category            9
+UnitPrice         107
+YearIntroduced     17
+SupplierRegion      9
+dtype: int64
+2025-11-06 19:50:21.761 | INFO     | __main__:main:262 - Initial dataframe columns: ProductID, ProductName, Category, UnitPrice, YearIntroduced, SupplierRegion
+2025-11-06 19:50:21.761 | INFO     | __main__:main:263 - Initial dataframe shape: (119, 6)
+2025-11-06 19:50:21.762 | INFO     | __main__:main:272 - Cleaned column names: ProductID -> productid, ProductName -> productname, Category -> category, UnitPrice -> unitprice, YearIntroduced -> yearintroduced, SupplierRegion -> supplierregion
+2025-11-06 19:50:21.762 | INFO     | __main__:remove_duplicates:109 - FUNCTION START: remove_duplicates with dataframe shape=(119, 6)
+2025-11-06 19:50:21.764 | INFO     | __main__:remove_duplicates:119 - Removed 14 duplicate rows
+2025-11-06 19:50:21.764 | INFO     | __main__:remove_duplicates:120 - 105 records remaining after removing duplicates.
+2025-11-06 19:50:21.764 | INFO     | __main__:handle_missing_values:134 - FUNCTION START: handle_missing_values with dataframe shape=(105, 6)
+2025-11-06 19:50:21.765 | INFO     | __main__:handle_missing_values:139 - Missing values by column before handling:
+productid         1
+productname       2
+category          1
+unitprice         3
+yearintroduced    0
+supplierregion    0
+dtype: int64
+2025-11-06 19:50:21.775 | INFO     | __main__:handle_missing_values:153 - Missing values by column after handling:
+productid         0
+productname       0
+category          0
+unitprice         0
+yearintroduced    0
+supplierregion    0
+dtype: int64
+2025-11-06 19:50:21.775 | INFO     | __main__:handle_missing_values:154 - 104 records remaining after handling missing values.
+2025-11-06 19:50:21.775 | INFO     | __main__:remove_outliers:168 - FUNCTION START: remove_outliers with dataframe shape=(104, 6)
+2025-11-06 19:50:21.775 | INFO     | __main__:remove_outliers:187 - Removed 0 outlier rows
+2025-11-06 19:50:21.775 | INFO     | __main__:remove_outliers:188 - 104 records remaining after removing outliers.
+2025-11-06 19:50:21.775 | INFO     | __main__:validate_data:224 - FUNCTION START: validate_data with dataframe shape=(104, 6)
+2025-11-06 19:50:21.776 | INFO     | __main__:validate_data:230 - Found 0 products with negative prices
+2025-11-06 19:51:59.810 | INFO     | __main__:main:240 - ==================================
+2025-11-06 19:51:59.810 | INFO     | __main__:main:241 - STARTING prepare_products_data.py
+2025-11-06 19:51:59.811 | INFO     | __main__:main:242 - ==================================
+2025-11-06 19:51:59.811 | INFO     | __main__:main:244 - Root         : C:\Repos\smart-store-rucu\src
+2025-11-06 19:51:59.811 | INFO     | __main__:main:245 - data/raw     : C:\Repos\smart-store-rucu\src\data\raw
+2025-11-06 19:51:59.811 | INFO     | __main__:main:246 - data/prepared: C:\Repos\smart-store-rucu\src\data\prepared
+2025-11-06 19:51:59.811 | INFO     | __main__:main:247 - scripts      : C:\Repos\smart-store-rucu\src\analytics_project
+2025-11-06 19:51:59.812 | INFO     | __main__:read_raw_data:70 - FUNCTION START: read_raw_data with file_name=products_data.csv
+2025-11-06 19:51:59.812 | INFO     | __main__:read_raw_data:72 - Reading data from C:\Repos\smart-store-rucu\src\data\raw\products_data.csv
+2025-11-06 19:51:59.815 | INFO     | __main__:read_raw_data:74 - Loaded dataframe with 119 rows and 6 columns
+2025-11-06 19:51:59.815 | INFO     | __main__:read_raw_data:75 - Columns in raw DataFrame : ['ProductID', 'ProductName', 'Category', 'UnitPrice', 'YearIntroduced', 'SupplierRegion']
+2025-11-06 19:51:59.816 | INFO     | __main__:read_raw_data:81 - Column datatypes: 
+ProductID         float64
+ProductName        object
+Category           object
+UnitPrice         float64
+YearIntroduced      int64
+SupplierRegion     object
+dtype: object
+2025-11-06 19:51:59.818 | INFO     | __main__:read_raw_data:82 - Number of unique values: 
+ProductID         104
+ProductName        98
+Category            9
+UnitPrice         107
+YearIntroduced     17
+SupplierRegion      9
+dtype: int64
+2025-11-06 19:51:59.818 | INFO     | __main__:read_raw_data:70 - FUNCTION START: read_raw_data with file_name=products_data.csv
+2025-11-06 19:51:59.819 | INFO     | __main__:read_raw_data:72 - Reading data from C:\Repos\smart-store-rucu\src\data\raw\products_data.csv
+2025-11-06 19:51:59.820 | INFO     | __main__:read_raw_data:74 - Loaded dataframe with 119 rows and 6 columns
+2025-11-06 19:51:59.821 | INFO     | __main__:read_raw_data:75 - Columns in raw DataFrame : ['ProductID', 'ProductName', 'Category', 'UnitPrice', 'YearIntroduced', 'SupplierRegion']
+2025-11-06 19:51:59.821 | INFO     | __main__:read_raw_data:81 - Column datatypes: 
+ProductID         float64
+ProductName        object
+Category           object
+UnitPrice         float64
+YearIntroduced      int64
+SupplierRegion     object
+dtype: object
+2025-11-06 19:51:59.822 | INFO     | __main__:read_raw_data:82 - Number of unique values: 
+ProductID         104
+ProductName        98
+Category            9
+UnitPrice         107
+YearIntroduced     17
+SupplierRegion      9
+dtype: int64
+2025-11-06 19:51:59.822 | INFO     | __main__:main:262 - Initial dataframe columns: ProductID, ProductName, Category, UnitPrice, YearIntroduced, SupplierRegion
+2025-11-06 19:51:59.822 | INFO     | __main__:main:263 - Initial dataframe shape: (119, 6)
+2025-11-06 19:51:59.823 | INFO     | __main__:main:272 - Cleaned column names: ProductID -> productid, ProductName -> productname, Category -> category, UnitPrice -> unitprice, YearIntroduced -> yearintroduced, SupplierRegion -> supplierregion
+2025-11-06 19:51:59.823 | INFO     | __main__:remove_duplicates:109 - FUNCTION START: remove_duplicates with dataframe shape=(119, 6)
+2025-11-06 19:51:59.825 | INFO     | __main__:remove_duplicates:119 - Removed 14 duplicate rows
+2025-11-06 19:51:59.826 | INFO     | __main__:remove_duplicates:120 - 105 records remaining after removing duplicates.
+2025-11-06 19:51:59.826 | INFO     | __main__:handle_missing_values:134 - FUNCTION START: handle_missing_values with dataframe shape=(105, 6)
+2025-11-06 19:51:59.827 | INFO     | __main__:handle_missing_values:139 - Missing values by column before handling:
+productid         1
+productname       2
+category          1
+unitprice         3
+yearintroduced    0
+supplierregion    0
+dtype: int64
+2025-11-06 19:51:59.831 | INFO     | __main__:handle_missing_values:153 - Missing values by column after handling:
+productid         0
+productname       0
+category          0
+unitprice         0
+yearintroduced    0
+supplierregion    0
+dtype: int64
+2025-11-06 19:51:59.831 | INFO     | __main__:handle_missing_values:154 - 104 records remaining after handling missing values.
+2025-11-06 19:51:59.831 | INFO     | __main__:remove_outliers:168 - FUNCTION START: remove_outliers with dataframe shape=(104, 6)
+2025-11-06 19:51:59.832 | INFO     | __main__:remove_outliers:187 - Removed 0 outlier rows
+2025-11-06 19:51:59.832 | INFO     | __main__:remove_outliers:188 - 104 records remaining after removing outliers.
+2025-11-06 19:51:59.832 | INFO     | __main__:validate_data:224 - FUNCTION START: validate_data with dataframe shape=(104, 6)
+2025-11-06 19:51:59.832 | INFO     | __main__:validate_data:230 - Found 0 products with negative prices
+2025-11-06 20:50:10.005 | INFO     | __main__:main:240 - ==================================
+2025-11-06 20:50:10.006 | INFO     | __main__:main:241 - STARTING prepare_products_data.py
+2025-11-06 20:50:10.006 | INFO     | __main__:main:242 - ==================================
+2025-11-06 20:50:10.006 | INFO     | __main__:main:244 - Root         : C:\Repos\smart-store-rucu\src
+2025-11-06 20:50:10.006 | INFO     | __main__:main:245 - data/raw     : C:\Repos\smart-store-rucu\src\data\raw
+2025-11-06 20:50:10.007 | INFO     | __main__:main:246 - data/prepared: C:\Repos\smart-store-rucu\src\data\prepared
+2025-11-06 20:50:10.007 | INFO     | __main__:main:247 - scripts      : C:\Repos\smart-store-rucu\src\analytics_project
+2025-11-06 20:50:10.007 | INFO     | __main__:read_raw_data:70 - FUNCTION START: read_raw_data with file_name=products_data.csv
+2025-11-06 20:50:10.007 | INFO     | __main__:read_raw_data:72 - Reading data from C:\Repos\smart-store-rucu\src\data\raw\products_data.csv
+2025-11-06 20:50:10.011 | INFO     | __main__:read_raw_data:74 - Loaded dataframe with 119 rows and 6 columns
+2025-11-06 20:50:10.011 | INFO     | __main__:read_raw_data:75 - Columns in raw DataFrame : ['ProductID', 'ProductName', 'Category', 'UnitPrice', 'YearIntroduced', 'SupplierRegion']
+2025-11-06 20:50:10.012 | INFO     | __main__:read_raw_data:81 - Column datatypes: 
+ProductID         float64
+ProductName        object
+Category           object
+UnitPrice         float64
+YearIntroduced      int64
+SupplierRegion     object
+dtype: object
+2025-11-06 20:50:10.014 | INFO     | __main__:read_raw_data:82 - Number of unique values: 
+ProductID         104
+ProductName        98
+Category            9
+UnitPrice         107
+YearIntroduced     17
+SupplierRegion      9
+dtype: int64
+2025-11-06 20:50:10.014 | INFO     | __main__:read_raw_data:70 - FUNCTION START: read_raw_data with file_name=products_data.csv
+2025-11-06 20:50:10.014 | INFO     | __main__:read_raw_data:72 - Reading data from C:\Repos\smart-store-rucu\src\data\raw\products_data.csv
+2025-11-06 20:50:10.016 | INFO     | __main__:read_raw_data:74 - Loaded dataframe with 119 rows and 6 columns
+2025-11-06 20:50:10.016 | INFO     | __main__:read_raw_data:75 - Columns in raw DataFrame : ['ProductID', 'ProductName', 'Category', 'UnitPrice', 'YearIntroduced', 'SupplierRegion']
+2025-11-06 20:50:10.016 | INFO     | __main__:read_raw_data:81 - Column datatypes: 
+ProductID         float64
+ProductName        object
+Category           object
+UnitPrice         float64
+YearIntroduced      int64
+SupplierRegion     object
+dtype: object
+2025-11-06 20:50:10.018 | INFO     | __main__:read_raw_data:82 - Number of unique values: 
+ProductID         104
+ProductName        98
+Category            9
+UnitPrice         107
+YearIntroduced     17
+SupplierRegion      9
+dtype: int64
+2025-11-06 20:50:10.018 | INFO     | __main__:main:262 - Initial dataframe columns: ProductID, ProductName, Category, UnitPrice, YearIntroduced, SupplierRegion
+2025-11-06 20:50:10.018 | INFO     | __main__:main:263 - Initial dataframe shape: (119, 6)
+2025-11-06 20:50:10.020 | INFO     | __main__:main:272 - Cleaned column names: ProductID -> productid, ProductName -> productname, Category -> category, UnitPrice -> unitprice, YearIntroduced -> yearintroduced, SupplierRegion -> supplierregion
+2025-11-06 20:50:10.020 | INFO     | __main__:remove_duplicates:109 - FUNCTION START: remove_duplicates with dataframe shape=(119, 6)
+2025-11-06 20:50:10.053 | INFO     | __main__:remove_duplicates:119 - Removed 14 duplicate rows
+2025-11-06 20:50:10.053 | INFO     | __main__:remove_duplicates:120 - 105 records remaining after removing duplicates.
+2025-11-06 20:50:10.053 | INFO     | __main__:handle_missing_values:134 - FUNCTION START: handle_missing_values with dataframe shape=(105, 6)
+2025-11-06 20:50:10.056 | INFO     | __main__:handle_missing_values:139 - Missing values by column before handling:
+productid         1
+productname       2
+category          1
+unitprice         3
+yearintroduced    0
+supplierregion    0
+dtype: int64
+2025-11-06 20:50:10.075 | INFO     | __main__:handle_missing_values:153 - Missing values by column after handling:
+productid         0
+productname       0
+category          0
+unitprice         0
+yearintroduced    0
+supplierregion    0
+dtype: int64
+2025-11-06 20:50:10.075 | INFO     | __main__:handle_missing_values:154 - 104 records remaining after handling missing values.
+2025-11-06 20:50:10.076 | INFO     | __main__:remove_outliers:168 - FUNCTION START: remove_outliers with dataframe shape=(104, 6)
+2025-11-06 20:50:10.076 | INFO     | __main__:remove_outliers:187 - Removed 0 outlier rows
+2025-11-06 20:50:10.076 | INFO     | __main__:remove_outliers:188 - 104 records remaining after removing outliers.
+2025-11-06 20:50:10.076 | INFO     | __main__:validate_data:224 - FUNCTION START: validate_data with dataframe shape=(104, 6)
+2025-11-06 20:50:10.077 | INFO     | __main__:validate_data:230 - Found 0 products with negative prices
+2025-11-06 20:50:10.077 | INFO     | __main__:validate_data:233 - Data validation complete
+2025-11-06 20:50:10.078 | INFO     | __main__:standardize_formats:201 - FUNCTION START: standardize_formats with dataframe shape=(95, 6)
+2025-11-06 20:50:10.080 | INFO     | __main__:standardize_formats:211 - Completed standardizing formats
+2025-11-06 20:50:10.080 | INFO     | __main__:save_prepared_data:94 - FUNCTION START: save_prepared_data with file_name=products_prepared.csv, dataframe shape=(95, 6)
+2025-11-06 20:50:10.084 | INFO     | __main__:save_prepared_data:97 - Data saved to C:\Repos\smart-store-rucu\src\data\prepared\products_prepared.csv
+2025-11-06 20:50:10.085 | INFO     | __main__:main:292 - ==================================
+2025-11-06 20:50:10.085 | INFO     | __main__:main:293 - Original shape: (95, 6)
+2025-11-06 20:50:10.085 | INFO     | __main__:main:294 - Cleaned shape:  (119, 6)
+2025-11-06 20:50:10.085 | INFO     | __main__:main:295 - ==================================
+2025-11-06 20:50:10.086 | INFO     | __main__:main:296 - FINISHED prepare_products_data.py
+2025-11-06 20:50:10.086 | INFO     | __main__:main:297 - ==================================
+2025-11-06 20:54:03.127 | INFO     | __main__:main:94 - ==================================
+2025-11-06 20:54:03.127 | INFO     | __main__:main:95 - STARTING prepare_sales_data.py
+2025-11-06 20:54:03.128 | INFO     | __main__:main:96 - ==================================
+2025-11-06 20:54:03.128 | INFO     | __main__:main:98 - Root         : C:\Repos\smart-store-rucu\src
+2025-11-06 20:54:03.128 | INFO     | __main__:main:99 - data/raw     : C:\Repos\smart-store-rucu\src\data\raw
+2025-11-06 20:54:03.128 | INFO     | __main__:main:100 - data/prepared: C:\Repos\smart-store-rucu\src\data\prepared
+2025-11-06 20:54:03.128 | INFO     | __main__:main:101 - scripts      : C:\Repos\smart-store-rucu\src\analytics_project
+2025-11-06 20:54:03.129 | INFO     | __main__:read_raw_data:71 - FUNCTION START: read_raw_data with file_name=sales_data.csv
+2025-11-06 20:54:03.129 | INFO     | __main__:read_raw_data:73 - Reading data from C:\Repos\smart-store-rucu\src\data\raw\sales_data.csv
+2025-11-06 20:54:03.143 | INFO     | __main__:read_raw_data:75 - Loaded dataframe with 2001 rows and 9 columns
+2025-11-06 20:54:03.143 | INFO     | __main__:main:113 - Initial dataframe columns: TransactionID, SaleDate, CustomerID, ProductID, StoreID, CampaignID, SaleAmount, RewardPointsEarned, ChannelUsed
+2025-11-06 20:54:03.143 | INFO     | __main__:main:114 - Initial dataframe shape: (2001, 9)
+2025-11-06 20:54:03.144 | INFO     | __main__:main:134 - ==================================
+2025-11-06 20:54:03.145 | INFO     | __main__:main:135 - Original shape: (2001, 9)
+2025-11-06 20:54:03.145 | INFO     | __main__:main:136 - Cleaned shape:  (2001, 9)
+2025-11-06 20:54:03.145 | INFO     | __main__:main:137 - ==================================
+2025-11-06 20:54:03.146 | INFO     | __main__:main:138 - FINISHED prepare_sales_data.py
+2025-11-06 20:54:03.146 | INFO     | __main__:main:139 - ==================================
+2025-11-06 21:13:05.178 | INFO     | __main__:main:123 - ==================================
+2025-11-06 21:13:05.178 | INFO     | __main__:main:124 - STARTING prepare_sales_data.py
+2025-11-06 21:13:05.178 | INFO     | __main__:main:125 - ==================================
+2025-11-06 21:13:05.179 | INFO     | __main__:main:127 - Root         : C:\Repos\smart-store-rucu\src
+2025-11-06 21:13:05.179 | INFO     | __main__:main:128 - data/raw     : C:\Repos\smart-store-rucu\src\data\raw
+2025-11-06 21:13:05.179 | INFO     | __main__:main:129 - data/prepared: C:\Repos\smart-store-rucu\src\data\prepared
+2025-11-06 21:13:05.179 | INFO     | __main__:main:130 - scripts      : C:\Repos\smart-store-rucu\src\analytics_project
+2025-11-06 21:13:05.179 | INFO     | __main__:read_raw_data:71 - FUNCTION START: read_raw_data with file_name=sales_data.csv
+2025-11-06 21:13:05.180 | INFO     | __main__:read_raw_data:73 - Reading data from C:\Repos\smart-store-rucu\src\data\raw\sales_data.csv
+2025-11-06 21:13:05.185 | INFO     | __main__:read_raw_data:75 - Loaded dataframe with 2001 rows and 9 columns
+2025-11-06 21:13:05.185 | INFO     | __main__:main:142 - Initial dataframe columns: TransactionID, SaleDate, CustomerID, ProductID, StoreID, CampaignID, SaleAmount, RewardPointsEarned, ChannelUsed
+2025-11-06 21:13:05.186 | INFO     | __main__:main:143 - Initial dataframe shape: (2001, 9)
+2025-11-06 21:13:05.186 | INFO     | __main__:main:163 - ==================================
+2025-11-06 21:13:05.186 | INFO     | __main__:main:164 - Original shape: (2001, 9)
+2025-11-06 21:13:05.186 | INFO     | __main__:main:165 - Cleaned shape:  (2001, 9)
+2025-11-06 21:13:05.187 | INFO     | __main__:main:166 - ==================================
+2025-11-06 21:13:05.187 | INFO     | __main__:main:167 - FINISHED prepare_sales_data.py
+2025-11-06 21:13:05.187 | INFO     | __main__:main:168 - ==================================
+2025-11-06 21:19:56.515 | INFO     | __main__:main:123 - ==================================
+2025-11-06 21:19:56.515 | INFO     | __main__:main:124 - STARTING prepare_sales_data.py
+2025-11-06 21:19:56.515 | INFO     | __main__:main:125 - ==================================
+2025-11-06 21:19:56.515 | INFO     | __main__:main:127 - Root         : C:\Repos\smart-store-rucu\src
+2025-11-06 21:19:56.515 | INFO     | __main__:main:128 - data/raw     : C:\Repos\smart-store-rucu\src\data\raw
+2025-11-06 21:19:56.516 | INFO     | __main__:main:129 - data/prepared: C:\Repos\smart-store-rucu\src\data\prepared
+2025-11-06 21:19:56.516 | INFO     | __main__:main:130 - scripts      : C:\Repos\smart-store-rucu\src\analytics_project
+2025-11-06 21:19:56.516 | INFO     | __main__:read_raw_data:71 - FUNCTION START: read_raw_data with file_name=sales_data.csv
+2025-11-06 21:19:56.516 | INFO     | __main__:read_raw_data:73 - Reading data from C:\Repos\smart-store-rucu\src\data\raw\sales_data.csv
+2025-11-06 21:19:56.521 | INFO     | __main__:read_raw_data:75 - Loaded dataframe with 2001 rows and 9 columns
+2025-11-06 21:19:56.521 | INFO     | __main__:main:142 - Initial dataframe columns: TransactionID, SaleDate, CustomerID, ProductID, StoreID, CampaignID, SaleAmount, RewardPointsEarned, ChannelUsed
+2025-11-06 21:19:56.521 | INFO     | __main__:main:143 - Initial dataframe shape: (2001, 9)
+2025-11-06 21:19:56.522 | INFO     | __main__:main:163 - ==================================
+2025-11-06 21:19:56.522 | INFO     | __main__:main:164 - Original shape: (2001, 9)
+2025-11-06 21:19:56.522 | INFO     | __main__:main:165 - Cleaned shape:  (2001, 9)
+2025-11-06 21:19:56.522 | INFO     | __main__:main:166 - ==================================
+2025-11-06 21:19:56.522 | INFO     | __main__:main:167 - FINISHED prepare_sales_data.py
+2025-11-06 21:19:56.522 | INFO     | __main__:main:168 - ==================================
+2025-11-06 21:31:24.624 | INFO     | __main__:main:124 - ==================================
+2025-11-06 21:31:24.625 | INFO     | __main__:main:125 - STARTING prepare_sales_data.py
+2025-11-06 21:31:24.625 | INFO     | __main__:main:126 - ==================================
+2025-11-06 21:31:24.625 | INFO     | __main__:main:128 - Root         : C:\Repos\smart-store-rucu\src
+2025-11-06 21:31:24.625 | INFO     | __main__:main:129 - data/raw     : C:\Repos\smart-store-rucu\src\data\raw
+2025-11-06 21:31:24.625 | INFO     | __main__:main:130 - data/prepared: C:\Repos\smart-store-rucu\src\data\prepared
+2025-11-06 21:31:24.625 | INFO     | __main__:main:131 - scripts      : C:\Repos\smart-store-rucu\src\analytics_project
+2025-11-06 21:31:24.625 | INFO     | __main__:read_raw_data:71 - FUNCTION START: read_raw_data with file_name=sales_data.csv
+2025-11-06 21:31:24.625 | INFO     | __main__:read_raw_data:73 - Reading data from C:\Repos\smart-store-rucu\src\data\raw\sales_data.csv
+2025-11-06 21:31:24.630 | INFO     | __main__:read_raw_data:75 - Loaded dataframe with 2014 rows and 9 columns
+2025-11-06 21:31:24.631 | INFO     | __main__:main:143 - Initial dataframe columns: TransactionID, SaleDate, CustomerID, ProductID, StoreID, CampaignID, SaleAmount, RewardPointsEarned, ChannelUsed
+2025-11-06 21:31:24.631 | INFO     | __main__:main:144 - Initial dataframe shape: (2014, 9)
+2025-11-06 21:31:24.632 | INFO     | __main__:main:164 - ==================================
+2025-11-06 21:31:24.632 | INFO     | __main__:main:165 - Original shape: (2014, 9)
+2025-11-06 21:31:24.632 | INFO     | __main__:main:166 - Cleaned shape:  (2014, 9)
+2025-11-06 21:31:24.632 | INFO     | __main__:main:167 - ==================================
+2025-11-06 21:31:24.632 | INFO     | __main__:main:168 - FINISHED prepare_sales_data.py
+2025-11-06 21:31:24.632 | INFO     | __main__:main:169 - ==================================
+2025-11-06 21:43:01.957 | INFO     | __main__:main:137 - ==================================
+2025-11-06 21:43:01.957 | INFO     | __main__:main:138 - STARTING prepare_sales_data.py
+2025-11-06 21:43:01.957 | INFO     | __main__:main:139 - ==================================
+2025-11-06 21:43:01.958 | INFO     | __main__:main:141 - Root         : C:\Repos\smart-store-rucu\src
+2025-11-06 21:43:01.958 | INFO     | __main__:main:142 - data/raw     : C:\Repos\smart-store-rucu\src\data\raw
+2025-11-06 21:43:01.958 | INFO     | __main__:main:143 - data/prepared: C:\Repos\smart-store-rucu\src\data\prepared
+2025-11-06 21:43:01.958 | INFO     | __main__:main:144 - scripts      : C:\Repos\smart-store-rucu\src\analytics_project
+2025-11-06 21:43:01.958 | INFO     | __main__:read_raw_data:71 - FUNCTION START: read_raw_data with file_name=sales_data.csv
+2025-11-06 21:43:01.959 | INFO     | __main__:read_raw_data:73 - Reading data from C:\Repos\smart-store-rucu\src\data\raw\sales_data.csv
+2025-11-06 21:43:01.965 | INFO     | __main__:read_raw_data:75 - Loaded dataframe with 2014 rows and 9 columns
+2025-11-06 21:43:01.965 | INFO     | __main__:main:156 - Initial dataframe columns: TransactionID, SaleDate, CustomerID, ProductID, StoreID, CampaignID, SaleAmount, RewardPointsEarned, ChannelUsed
+2025-11-06 21:43:01.965 | INFO     | __main__:main:157 - Initial dataframe shape: (2014, 9)
+2025-11-06 21:43:01.966 | INFO     | __main__:save_prepared_data:119 - FUNCTION START: save_prepared_data with file_name=sales_prepared.csv, dataframe shape=(2014, 9)
+2025-11-06 21:43:01.976 | INFO     | __main__:save_prepared_data:122 - Data saved to C:\Repos\smart-store-rucu\src\data\prepared\sales_prepared.csv
+2025-11-06 21:43:01.976 | INFO     | __main__:main:180 - ==================================
+2025-11-06 21:43:01.976 | INFO     | __main__:main:181 - Original shape: (2014, 9)
+2025-11-06 21:43:01.977 | INFO     | __main__:main:182 - Cleaned shape:  (2014, 9)
+2025-11-06 21:43:01.977 | INFO     | __main__:main:183 - ==================================
+2025-11-06 21:43:01.977 | INFO     | __main__:main:184 - FINISHED prepare_sales_data.py
+2025-11-06 21:43:01.977 | INFO     | __main__:main:185 - ==================================

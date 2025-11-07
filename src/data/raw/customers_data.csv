@@ -160,11 +160,11 @@ CustomerID,Name,Region,JoinDate,YearsWithCompany,PreferredChannel
 1158,Kelly Gallagher,East,3/2/2024,3,Web Portal
 1159,Kelli Smith,North,1/28/2022,2,Email
 1160,Phillip Soto,West,4/21/2023,1,Email
-1161,David Ellis,East,1/2/2023,8,Web Portal
-1162,Deborah Rice,east,1/14/2022,7,SMS
-1163,Elizabeth Vaughn,West,5/1/2023,9,App
-1164,William Ramsey,North,5/4/2023,12,Web Portal
-1165,Richard Burnett,Central,7/24/2022,4,Web Portal
+1161,David Ellis,East,1/2/2023,7,
+1162,Deborah Rice,east,1/14/2022,9,
+1163,Elizabeth Vaughn,West,5/1/2023,4,
+1164,William Ramsey,North,5/4/2023,5,
+1165,Richard Burnett,Central,7/24/2022,4,
 1166,David Mccullough,south-west,12/15/2021,7,Email
 1167,Terry Frederick,North,12/20/2021,9,Email
 1168,Denise Gonzales,South,5/2/2022,4,Web Portal
@@ -192,6 +192,14 @@ CustomerID,Name,Region,JoinDate,YearsWithCompany,PreferredChannel
 1190,Elizabeth Robinson,south-west,12/27/2023,5,SMS
 1191,Kyle Smith Jr.,South,10/31/2023,4,App
 1192,Gregory Medina,EAST,6/6/2020,3,Web Portal
+1193,Nancy King,South,5/23/2022,12,Web Portal
+1194,Casey Brown,Central,2/9/2024,11,Email
+1195,Michael Lee,south-west,8/22/2023,1,Email
+1196,Dr. Elizabeth Johnston DDS,North,2/9/2022,8,Web Portal
+1197,William Wilson,West,4/4/2023,7,SMS
+1198,Chris Allen,south-west,10/11/2022,9,App
+1199,James Cooley,West,7/23/2020,12,Web Portal
+1005,Jessica Mora,South,8/5/2021,4,Web Portal
 1193,Nancy King,South,5/23/2022,12,Web Portal
 1194,Casey Brown,Central,2/9/2024,11,Email
 1195,Michael Lee,south-west,8/22/2023,1,Email
