@@ -120,7 +120,63 @@ def save_prepared_data(df: pd.DataFrame, file_name: str) -> None:
     file_path = PREPARED_DATA_DIR.joinpath(file_name)
     df.to_csv(file_path, index=False)
     logger.info(f"Data saved to {file_path}")
+    
+def remove_duplicates(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Remove duplicate rows from the DataFrame.
 
+    Args:
+        df (pd.DataFrame): Input DataFrame.
+    
+    Returns:
+        pd.DataFrame: DataFrame with duplicates removed.
+    """
+    logger.info(f"FUNCTION START: remove_duplicates with dataframe shape={df.shape}")
+    initial_count = len(df)
+    
+    # TODO: Consider which columns should be used to identify duplicates
+    # Example: For products, SKU or product code is typically unique
+    # So we could do something like this:
+    df = df.drop_duplicates(subset=['CustomerID'])
+    df = df.drop_duplicates()
+    
+    removed_count = initial_count - len(df)
+    logger.info(f"Removed {removed_count} duplicate rows")
+    logger.info(f"{len(df)} records remaining after removing duplicates.")
+    return df
+
+def handle_missing_values(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Handle missing values by filling or dropping.
+    This logic is specific to the actual data and business rules.
+
+    Args:
+        df (pd.DataFrame): Input DataFrame.
+    
+    Returns:
+        pd.DataFrame: DataFrame with missing values handled.
+    """
+    logger.info(f"FUNCTION START: handle_missing_values with dataframe shape={df.shape}")
+    
+    # Log missing values by column before handling
+    # NA means missing or "not a number" - ask your AI for details
+    missing_by_col = df.isna().sum()
+    logger.info(f"Missing values by column before handling:\n{missing_by_col}")
+
+# TODO: OPTIONAL - We can implement appropriate missing value handling 
+    # specific to our data. 
+    # For example: Different strategies may be needed for different columns
+    # USE YOUR COLUMN NAMES - these are just examples
+    df['SaleAmount'] = pd.to_numeric(df['SaleAmount'], errors='coerce')
+    df['SaleAmount'].fillna(df['SaleAmount'].median(), inplace=True)
+    # df['category'].fillna(df['category'].mode()[0], inplace=True)
+    df.dropna(subset=['CampaignID'], inplace=True)  # Remove rows without product code
+    
+    # Log missing values by column after handling
+    missing_after = df.isna().sum()
+    logger.info(f"Missing values by column after handling:\n{missing_after}")
+    logger.info(f"{len(df)} records remaining after handling missing values.")
+    return df
     # Save cleaned data
     #output_path = PREPARED_DATA_DIR / "sales_prepared.csv"
     #df.to_csv(output_path, index=False)
@@ -168,8 +224,10 @@ def main() -> None:
 
 
     # TODO: Remove duplicates
+    df = remove_duplicates(df)
 
     # TODO:Handle missing values
+    df =handle_missing_values(df)
 
     # TODO:Remove outliers
 

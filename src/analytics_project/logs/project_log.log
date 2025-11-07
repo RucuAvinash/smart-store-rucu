@@ -856,3 +856,77 @@ dtype: int64
 2025-11-06 21:43:01.977 | INFO     | __main__:main:183 - ==================================
 2025-11-06 21:43:01.977 | INFO     | __main__:main:184 - FINISHED prepare_sales_data.py
 2025-11-06 21:43:01.977 | INFO     | __main__:main:185 - ==================================
+2025-11-06 22:42:20.698 | INFO     | __main__:main:192 - ==================================
+2025-11-06 22:42:20.705 | INFO     | __main__:main:193 - STARTING prepare_sales_data.py
+2025-11-06 22:42:20.711 | INFO     | __main__:main:194 - ==================================
+2025-11-06 22:42:20.712 | INFO     | __main__:main:196 - Root         : C:\Repos\smart-store-rucu\src
+2025-11-06 22:42:20.719 | INFO     | __main__:main:197 - data/raw     : C:\Repos\smart-store-rucu\src\data\raw
+2025-11-06 22:42:20.720 | INFO     | __main__:main:198 - data/prepared: C:\Repos\smart-store-rucu\src\data\prepared
+2025-11-06 22:42:20.720 | INFO     | __main__:main:199 - scripts      : C:\Repos\smart-store-rucu\src\analytics_project
+2025-11-06 22:42:20.721 | INFO     | __main__:read_raw_data:71 - FUNCTION START: read_raw_data with file_name=sales_data.csv
+2025-11-06 22:42:20.722 | INFO     | __main__:read_raw_data:73 - Reading data from C:\Repos\smart-store-rucu\src\data\raw\sales_data.csv
+2025-11-06 22:42:20.764 | INFO     | __main__:read_raw_data:75 - Loaded dataframe with 2014 rows and 9 columns
+2025-11-06 22:42:20.773 | INFO     | __main__:main:211 - Initial dataframe columns: TransactionID, SaleDate, CustomerID, ProductID, StoreID, CampaignID, SaleAmount, RewardPointsEarned, ChannelUsed
+2025-11-06 22:42:20.781 | INFO     | __main__:main:212 - Initial dataframe shape: (2014, 9)
+2025-11-06 22:42:20.793 | INFO     | __main__:remove_duplicates:134 - FUNCTION START: remove_duplicates with dataframe shape=(2014, 9)
+2025-11-06 22:42:20.840 | INFO     | __main__:remove_duplicates:144 - Removed 1813 duplicate rows
+2025-11-06 22:42:20.842 | INFO     | __main__:remove_duplicates:145 - 201 records remaining after removing duplicates.
+2025-11-06 22:42:20.845 | INFO     | __main__:handle_missing_values:159 - FUNCTION START: handle_missing_values with dataframe shape=(201, 9)
+2025-11-06 22:42:20.857 | INFO     | __main__:handle_missing_values:164 - Missing values by column before handling:
+TransactionID         0
+SaleDate              0
+CustomerID            0
+ProductID             0
+StoreID               0
+CampaignID            1
+SaleAmount            0
+RewardPointsEarned    0
+ChannelUsed           0
+dtype: int64
+2025-11-06 22:46:54.069 | INFO     | __main__:main:193 - ==================================
+2025-11-06 22:46:54.070 | INFO     | __main__:main:194 - STARTING prepare_sales_data.py
+2025-11-06 22:46:54.070 | INFO     | __main__:main:195 - ==================================
+2025-11-06 22:46:54.070 | INFO     | __main__:main:197 - Root         : C:\Repos\smart-store-rucu\src
+2025-11-06 22:46:54.070 | INFO     | __main__:main:198 - data/raw     : C:\Repos\smart-store-rucu\src\data\raw
+2025-11-06 22:46:54.070 | INFO     | __main__:main:199 - data/prepared: C:\Repos\smart-store-rucu\src\data\prepared
+2025-11-06 22:46:54.070 | INFO     | __main__:main:200 - scripts      : C:\Repos\smart-store-rucu\src\analytics_project
+2025-11-06 22:46:54.070 | INFO     | __main__:read_raw_data:71 - FUNCTION START: read_raw_data with file_name=sales_data.csv
+2025-11-06 22:46:54.071 | INFO     | __main__:read_raw_data:73 - Reading data from C:\Repos\smart-store-rucu\src\data\raw\sales_data.csv
+2025-11-06 22:46:54.075 | INFO     | __main__:read_raw_data:75 - Loaded dataframe with 2014 rows and 9 columns
+2025-11-06 22:46:54.076 | INFO     | __main__:main:212 - Initial dataframe columns: TransactionID, SaleDate, CustomerID, ProductID, StoreID, CampaignID, SaleAmount, RewardPointsEarned, ChannelUsed
+2025-11-06 22:46:54.076 | INFO     | __main__:main:213 - Initial dataframe shape: (2014, 9)
+2025-11-06 22:46:54.077 | INFO     | __main__:remove_duplicates:134 - FUNCTION START: remove_duplicates with dataframe shape=(2014, 9)
+2025-11-06 22:46:54.080 | INFO     | __main__:remove_duplicates:144 - Removed 1813 duplicate rows
+2025-11-06 22:46:54.081 | INFO     | __main__:remove_duplicates:145 - 201 records remaining after removing duplicates.
+2025-11-06 22:46:54.081 | INFO     | __main__:handle_missing_values:159 - FUNCTION START: handle_missing_values with dataframe shape=(201, 9)
+2025-11-06 22:46:54.082 | INFO     | __main__:handle_missing_values:164 - Missing values by column before handling:
+TransactionID         0
+SaleDate              0
+CustomerID            0
+ProductID             0
+StoreID               0
+CampaignID            1
+SaleAmount            0
+RewardPointsEarned    0
+ChannelUsed           0
+dtype: int64
+2025-11-06 22:46:54.095 | INFO     | __main__:handle_missing_values:177 - Missing values by column after handling:
+TransactionID         0
+SaleDate              0
+CustomerID            0
+ProductID             0
+StoreID               0
+CampaignID            0
+SaleAmount            0
+RewardPointsEarned    0
+ChannelUsed           0
+dtype: int64
+2025-11-06 22:46:54.096 | INFO     | __main__:handle_missing_values:178 - 200 records remaining after handling missing values.
+2025-11-06 22:46:54.096 | INFO     | __main__:save_prepared_data:119 - FUNCTION START: save_prepared_data with file_name=sales_prepared.csv, dataframe shape=(200, 9)
+2025-11-06 22:46:54.099 | INFO     | __main__:save_prepared_data:122 - Data saved to C:\Repos\smart-store-rucu\src\data\prepared\sales_prepared.csv
+2025-11-06 22:46:54.100 | INFO     | __main__:main:238 - ==================================
+2025-11-06 22:46:54.100 | INFO     | __main__:main:239 - Original shape: (200, 9)
+2025-11-06 22:46:54.100 | INFO     | __main__:main:240 - Cleaned shape:  (2014, 9)
+2025-11-06 22:46:54.100 | INFO     | __main__:main:241 - ==================================
+2025-11-06 22:46:54.100 | INFO     | __main__:main:242 - FINISHED prepare_sales_data.py
+2025-11-06 22:46:54.101 | INFO     | __main__:main:243 - ==================================
