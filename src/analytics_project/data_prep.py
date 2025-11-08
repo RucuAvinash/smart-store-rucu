@@ -1,7 +1,7 @@
 from pathlib import Path
 import logging
 
-from analytics_project.utils.data_scrubber import DataScrubber
+from data_scrubber import DataScrubber
 
 import sys
 print ("sys.path:",sys.path)

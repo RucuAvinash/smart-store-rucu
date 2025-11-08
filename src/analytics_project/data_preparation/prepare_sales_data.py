@@ -35,7 +35,7 @@ sys.path.append(str(pathlib.Path(__file__).resolve().parent.parent.parent))
 from utils.logger import logger  
 
 # Optional: Use a data_scrubber module for common data cleaning tasks
-from utils.data_scrubber import DataScrubber  
+from data_scrubber import DataScrubber  
 
 
 # Constants

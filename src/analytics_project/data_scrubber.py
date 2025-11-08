@@ -293,7 +293,7 @@ class DataScrubber:
         Returns:
         DataScrubber: The updated instance with whitespace stripped.
         """
-        self.df = self.df.applymap(lambda x: x.strip() if isinstance(x,str) else x)
+        self.df = self.df.map(lambda x: x.strip() if isinstance(x,str) else x)
         return self
     def drop_empty_rows(self) -> "DataScrubber":
         """
