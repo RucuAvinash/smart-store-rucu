@@ -27,6 +27,7 @@ Example:
 import io
 import pandas as pd
 from typing import Dict, Tuple, Union, List
+from pathlib import Path
 
 class DataScrubber:
     def __init__(self, df: pd.DataFrame):
@@ -37,6 +38,18 @@ class DataScrubber:
             df (pd.DataFrame): The DataFrame to be scrubbed.
         """
         self.df = df
+    @classmethod
+    def from_csv(cls,path: Union[str,Path]) -> "DataScrubber":
+        df = pd.read_csv(path)
+        return cls(df)
+    def to_csv(self,path: Union[str,Path], index:bool =False) -> None:
+        """
+        Save the cleaned dataframe to a csv file.
+        parameters:
+        path(str or path): destination path for the csv file
+        index(bool): whether to include the index in the output file'
+        """
+        self.df.to_csv(path,index=index)
 
     def check_data_consistency_before_cleaning(self) -> Dict[str, Union[pd.Series, int]]:
         """
@@ -264,3 +277,37 @@ class DataScrubber:
                 raise ValueError(f"Column name '{column}' not found in the DataFrame.")
         self.df = self.df[columns]
         return self.df
+    def standardize_column_names(self) -> "DataScrubber":
+        """
+        Standardize column names by stripping whitespaces,converting to lowercase and replacing spaces with underscores.
+        
+        Returns:
+         DataScrubber: The updated instance with standardized column names.
+         """
+        self.df.columns = [col.strip().lower().replace(" ", "_") for col  in self.df.columns]
+        return self
+    def strip_whitespace(self)-> "DataScrubber":
+        """
+        Strip leading and trailing whitspaces
+        
+        Returns:
+        DataScrubber: The updated instance with whitespace stripped.
+        """
+        self.df = self.df.applymap(lambda x: x.strip() if isinstance(x,str) else x)
+        return self
+    def drop_empty_rows(self) -> "DataScrubber":
+        """
+        Drop rows that are completely empty
+        Returns:
+           DataScrubber: The updated instance with empty rows removed"
+           """
+        self.df.dropna(how="all", inplace=True)
+        return(self)
+    def drop_duplicates(self) -> "DataScrubber":
+     """
+     Drop duplicate rows from dataframes
+     Returns:
+       DataScrubber : The updated instance with duplicates removed"
+       """
+     self.df = self.df.drop_duplicates()          
+     return self
