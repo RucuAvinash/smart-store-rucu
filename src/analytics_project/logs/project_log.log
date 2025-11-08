@@ -968,3 +968,117 @@ dtype: int64
 2025-11-07 20:16:35.293 | INFO     | analytics_project.data_scrubber:drop_duplicates:372 - Removed 3 duplicate rows.
 2025-11-07 20:16:35.299 | INFO     | __main__:prep_dataset:37 - Cleaned data saved to sales_data_clean.csv
 2025-11-07 20:16:35.300 | INFO     | __main__:main:51 - Data prep complete. Clean files written to: C:\Repos\smart-store-rucu\data\processed
+2025-11-07 20:23:09.989 | INFO     | __main__:prep_dataset:26 - Processing customers_data.csv...
+2025-11-07 20:23:09.994 | INFO     | analytics_project.data_scrubber:standardize_column_names:316 - Standardized column names: ['CustomerID', 'Name', 'Region', 'JoinDate', 'YearsWithCompany', 'PreferredChannel'] → ['customerid', 'name', 'region', 'joindate', 'yearswithcompany', 'preferredchannel']
+2025-11-07 20:23:09.997 | INFO     | analytics_project.data_scrubber:strip_whitespace:333 - Whitespace stripped successfully.
+2025-11-07 20:23:09.998 | INFO     | analytics_project.data_scrubber:drop_empty_rows:353 - Removed 0 completely empty rows.
+2025-11-07 20:23:10.001 | INFO     | analytics_project.data_scrubber:drop_duplicates:372 - Removed 8 duplicate rows.
+2025-11-07 20:23:10.005 | INFO     | __main__:prep_dataset:37 - Cleaned data saved to customers_data_clean.csv
+2025-11-07 20:23:10.005 | INFO     | __main__:prep_dataset:26 - Processing products_data.csv...
+2025-11-07 20:23:10.010 | INFO     | analytics_project.data_scrubber:standardize_column_names:316 - Standardized column names: ['ProductID', 'ProductName', 'Category', 'UnitPrice', 'YearIntroduced', 'SupplierRegion'] → ['productid', 'productname', 'category', 'unitprice', 'yearintroduced', 'supplierregion']
+2025-11-07 20:23:10.012 | INFO     | analytics_project.data_scrubber:strip_whitespace:333 - Whitespace stripped successfully.
+2025-11-07 20:23:10.013 | INFO     | analytics_project.data_scrubber:drop_empty_rows:353 - Removed 0 completely empty rows.
+2025-11-07 20:23:10.015 | INFO     | analytics_project.data_scrubber:drop_duplicates:372 - Removed 0 duplicate rows.
+2025-11-07 20:23:10.017 | INFO     | __main__:prep_dataset:37 - Cleaned data saved to products_data_clean.csv
+2025-11-07 20:23:10.017 | INFO     | __main__:prep_dataset:26 - Processing sales_data.csv...
+2025-11-07 20:23:10.024 | INFO     | analytics_project.data_scrubber:standardize_column_names:316 - Standardized column names: ['TransactionID', 'SaleDate', 'CustomerID', 'ProductID', 'StoreID', 'CampaignID', 'SaleAmount', 'RewardPointsEarned', 'ChannelUsed'] → ['transactionid', 'saledate', 'customerid', 'productid', 'storeid', 'campaignid', 'saleamount', 'rewardpointsearned', 'channelused']
+2025-11-07 20:23:10.032 | INFO     | analytics_project.data_scrubber:strip_whitespace:333 - Whitespace stripped successfully.
+2025-11-07 20:23:10.033 | INFO     | analytics_project.data_scrubber:drop_empty_rows:353 - Removed 0 completely empty rows.
+2025-11-07 20:23:10.035 | INFO     | analytics_project.data_scrubber:drop_duplicates:372 - Removed 3 duplicate rows.
+2025-11-07 20:23:10.043 | INFO     | __main__:prep_dataset:37 - Cleaned data saved to sales_data_clean.csv
+2025-11-07 20:23:10.044 | INFO     | __main__:main:51 - Data prep complete. Clean files written to: C:\Repos\smart-store-rucu\data\processed
+2025-11-07 20:25:31.282 | INFO     | __main__:prep_dataset:26 - Processing customers_data.csv...
+2025-11-07 20:25:31.285 | INFO     | analytics_project.data_scrubber:standardize_column_names:316 - Standardized column names: ['CustomerID', 'Name', 'Region', 'JoinDate', 'YearsWithCompany', 'PreferredChannel'] → ['customerid', 'name', 'region', 'joindate', 'yearswithcompany', 'preferredchannel']
+2025-11-07 20:25:31.288 | INFO     | analytics_project.data_scrubber:strip_whitespace:333 - Whitespace stripped successfully.
+2025-11-07 20:25:31.289 | INFO     | analytics_project.data_scrubber:drop_empty_rows:353 - Removed 0 completely empty rows.
+2025-11-07 20:25:31.292 | INFO     | analytics_project.data_scrubber:drop_duplicates:372 - Removed 8 duplicate rows.
+2025-11-07 20:25:31.297 | INFO     | __main__:prep_dataset:37 - Cleaned data saved to customers_data_clean.csv
+2025-11-07 20:25:31.298 | INFO     | __main__:prep_dataset:26 - Processing products_data.csv...
+2025-11-07 20:25:31.300 | INFO     | analytics_project.data_scrubber:standardize_column_names:316 - Standardized column names: ['ProductID', 'ProductName', 'Category', 'UnitPrice', 'YearIntroduced', 'SupplierRegion'] → ['productid', 'productname', 'category', 'unitprice', 'yearintroduced', 'supplierregion']
+2025-11-07 20:25:31.301 | INFO     | analytics_project.data_scrubber:strip_whitespace:333 - Whitespace stripped successfully.
+2025-11-07 20:25:31.302 | INFO     | analytics_project.data_scrubber:drop_empty_rows:353 - Removed 0 completely empty rows.
+2025-11-07 20:25:31.303 | INFO     | analytics_project.data_scrubber:drop_duplicates:372 - Removed 0 duplicate rows.
+2025-11-07 20:25:31.306 | INFO     | __main__:prep_dataset:37 - Cleaned data saved to products_data_clean.csv
+2025-11-07 20:25:31.306 | INFO     | __main__:prep_dataset:26 - Processing sales_data.csv...
+2025-11-07 20:25:31.309 | INFO     | analytics_project.data_scrubber:standardize_column_names:316 - Standardized column names: ['TransactionID', 'SaleDate', 'CustomerID', 'ProductID', 'StoreID', 'CampaignID', 'SaleAmount', 'RewardPointsEarned', 'ChannelUsed'] → ['transactionid', 'saledate', 'customerid', 'productid', 'storeid', 'campaignid', 'saleamount', 'rewardpointsearned', 'channelused']
+2025-11-07 20:25:31.317 | INFO     | analytics_project.data_scrubber:strip_whitespace:333 - Whitespace stripped successfully.
+2025-11-07 20:25:31.319 | INFO     | analytics_project.data_scrubber:drop_empty_rows:353 - Removed 0 completely empty rows.
+2025-11-07 20:25:31.321 | INFO     | analytics_project.data_scrubber:drop_duplicates:372 - Removed 3 duplicate rows.
+2025-11-07 20:25:31.326 | INFO     | __main__:prep_dataset:37 - Cleaned data saved to sales_data_clean.csv
+2025-11-07 20:25:31.326 | INFO     | __main__:main:51 - Data prep complete. Clean files written to: C:\Repos\smart-store-rucu\data\processed
+2025-11-07 20:25:36.225 | INFO     | __main__:prep_dataset:26 - Processing customers_data.csv...
+2025-11-07 20:25:36.230 | INFO     | analytics_project.data_scrubber:standardize_column_names:316 - Standardized column names: ['CustomerID', 'Name', 'Region', 'JoinDate', 'YearsWithCompany', 'PreferredChannel'] → ['customerid', 'name', 'region', 'joindate', 'yearswithcompany', 'preferredchannel']
+2025-11-07 20:25:36.234 | INFO     | analytics_project.data_scrubber:strip_whitespace:333 - Whitespace stripped successfully.
+2025-11-07 20:25:36.235 | INFO     | analytics_project.data_scrubber:drop_empty_rows:353 - Removed 0 completely empty rows.
+2025-11-07 20:25:36.240 | INFO     | analytics_project.data_scrubber:drop_duplicates:372 - Removed 8 duplicate rows.
+2025-11-07 20:25:36.245 | INFO     | __main__:prep_dataset:37 - Cleaned data saved to customers_data_clean.csv
+2025-11-07 20:25:36.245 | INFO     | __main__:prep_dataset:26 - Processing products_data.csv...
+2025-11-07 20:25:36.248 | INFO     | analytics_project.data_scrubber:standardize_column_names:316 - Standardized column names: ['ProductID', 'ProductName', 'Category', 'UnitPrice', 'YearIntroduced', 'SupplierRegion'] → ['productid', 'productname', 'category', 'unitprice', 'yearintroduced', 'supplierregion']
+2025-11-07 20:25:36.251 | INFO     | analytics_project.data_scrubber:strip_whitespace:333 - Whitespace stripped successfully.
+2025-11-07 20:25:36.252 | INFO     | analytics_project.data_scrubber:drop_empty_rows:353 - Removed 0 completely empty rows.
+2025-11-07 20:25:36.255 | INFO     | analytics_project.data_scrubber:drop_duplicates:372 - Removed 0 duplicate rows.
+2025-11-07 20:25:36.258 | INFO     | __main__:prep_dataset:37 - Cleaned data saved to products_data_clean.csv
+2025-11-07 20:25:36.258 | INFO     | __main__:prep_dataset:26 - Processing sales_data.csv...
+2025-11-07 20:25:36.266 | INFO     | analytics_project.data_scrubber:standardize_column_names:316 - Standardized column names: ['TransactionID', 'SaleDate', 'CustomerID', 'ProductID', 'StoreID', 'CampaignID', 'SaleAmount', 'RewardPointsEarned', 'ChannelUsed'] → ['transactionid', 'saledate', 'customerid', 'productid', 'storeid', 'campaignid', 'saleamount', 'rewardpointsearned', 'channelused']
+2025-11-07 20:25:36.273 | INFO     | analytics_project.data_scrubber:strip_whitespace:333 - Whitespace stripped successfully.
+2025-11-07 20:25:36.275 | INFO     | analytics_project.data_scrubber:drop_empty_rows:353 - Removed 0 completely empty rows.
+2025-11-07 20:25:36.278 | INFO     | analytics_project.data_scrubber:drop_duplicates:372 - Removed 3 duplicate rows.
+2025-11-07 20:25:36.287 | INFO     | __main__:prep_dataset:37 - Cleaned data saved to sales_data_clean.csv
+2025-11-07 20:25:36.287 | INFO     | __main__:main:51 - Data prep complete. Clean files written to: C:\Repos\smart-store-rucu\data\processed
+2025-11-07 20:25:51.135 | INFO     | __main__:prep_dataset:26 - Processing customers_data.csv...
+2025-11-07 20:25:51.139 | INFO     | analytics_project.data_scrubber:standardize_column_names:316 - Standardized column names: ['CustomerID', 'Name', 'Region', 'JoinDate', 'YearsWithCompany', 'PreferredChannel'] → ['customerid', 'name', 'region', 'joindate', 'yearswithcompany', 'preferredchannel']
+2025-11-07 20:25:51.141 | INFO     | analytics_project.data_scrubber:strip_whitespace:333 - Whitespace stripped successfully.
+2025-11-07 20:25:51.143 | INFO     | analytics_project.data_scrubber:drop_empty_rows:353 - Removed 0 completely empty rows.
+2025-11-07 20:25:51.145 | INFO     | analytics_project.data_scrubber:drop_duplicates:372 - Removed 8 duplicate rows.
+2025-11-07 20:25:51.148 | INFO     | __main__:prep_dataset:37 - Cleaned data saved to customers_data_clean.csv
+2025-11-07 20:25:51.148 | INFO     | __main__:prep_dataset:26 - Processing products_data.csv...
+2025-11-07 20:25:51.153 | INFO     | analytics_project.data_scrubber:standardize_column_names:316 - Standardized column names: ['ProductID', 'ProductName', 'Category', 'UnitPrice', 'YearIntroduced', 'SupplierRegion'] → ['productid', 'productname', 'category', 'unitprice', 'yearintroduced', 'supplierregion']
+2025-11-07 20:25:51.157 | INFO     | analytics_project.data_scrubber:strip_whitespace:333 - Whitespace stripped successfully.
+2025-11-07 20:25:51.158 | INFO     | analytics_project.data_scrubber:drop_empty_rows:353 - Removed 0 completely empty rows.
+2025-11-07 20:25:51.160 | INFO     | analytics_project.data_scrubber:drop_duplicates:372 - Removed 0 duplicate rows.
+2025-11-07 20:25:51.163 | INFO     | __main__:prep_dataset:37 - Cleaned data saved to products_data_clean.csv
+2025-11-07 20:25:51.163 | INFO     | __main__:prep_dataset:26 - Processing sales_data.csv...
+2025-11-07 20:25:51.167 | INFO     | analytics_project.data_scrubber:standardize_column_names:316 - Standardized column names: ['TransactionID', 'SaleDate', 'CustomerID', 'ProductID', 'StoreID', 'CampaignID', 'SaleAmount', 'RewardPointsEarned', 'ChannelUsed'] → ['transactionid', 'saledate', 'customerid', 'productid', 'storeid', 'campaignid', 'saleamount', 'rewardpointsearned', 'channelused']
+2025-11-07 20:25:51.175 | INFO     | analytics_project.data_scrubber:strip_whitespace:333 - Whitespace stripped successfully.
+2025-11-07 20:25:51.176 | INFO     | analytics_project.data_scrubber:drop_empty_rows:353 - Removed 0 completely empty rows.
+2025-11-07 20:25:51.179 | INFO     | analytics_project.data_scrubber:drop_duplicates:372 - Removed 3 duplicate rows.
+2025-11-07 20:25:51.185 | INFO     | __main__:prep_dataset:37 - Cleaned data saved to sales_data_clean.csv
+2025-11-07 20:25:51.186 | INFO     | __main__:main:51 - Data prep complete. Clean files written to: C:\Repos\smart-store-rucu\data\processed
+2025-11-07 20:25:58.763 | INFO     | __main__:prep_dataset:26 - Processing customers_data.csv...
+2025-11-07 20:25:58.766 | INFO     | analytics_project.data_scrubber:standardize_column_names:316 - Standardized column names: ['CustomerID', 'Name', 'Region', 'JoinDate', 'YearsWithCompany', 'PreferredChannel'] → ['customerid', 'name', 'region', 'joindate', 'yearswithcompany', 'preferredchannel']
+2025-11-07 20:25:58.768 | INFO     | analytics_project.data_scrubber:strip_whitespace:333 - Whitespace stripped successfully.
+2025-11-07 20:25:58.769 | INFO     | analytics_project.data_scrubber:drop_empty_rows:353 - Removed 0 completely empty rows.
+2025-11-07 20:25:58.770 | INFO     | analytics_project.data_scrubber:drop_duplicates:372 - Removed 8 duplicate rows.
+2025-11-07 20:25:58.772 | INFO     | __main__:prep_dataset:37 - Cleaned data saved to customers_data_clean.csv
+2025-11-07 20:25:58.773 | INFO     | __main__:prep_dataset:26 - Processing products_data.csv...
+2025-11-07 20:25:58.775 | INFO     | analytics_project.data_scrubber:standardize_column_names:316 - Standardized column names: ['ProductID', 'ProductName', 'Category', 'UnitPrice', 'YearIntroduced', 'SupplierRegion'] → ['productid', 'productname', 'category', 'unitprice', 'yearintroduced', 'supplierregion']
+2025-11-07 20:25:58.778 | INFO     | analytics_project.data_scrubber:strip_whitespace:333 - Whitespace stripped successfully.
+2025-11-07 20:25:58.779 | INFO     | analytics_project.data_scrubber:drop_empty_rows:353 - Removed 0 completely empty rows.
+2025-11-07 20:25:58.780 | INFO     | analytics_project.data_scrubber:drop_duplicates:372 - Removed 0 duplicate rows.
+2025-11-07 20:25:58.781 | INFO     | __main__:prep_dataset:37 - Cleaned data saved to products_data_clean.csv
+2025-11-07 20:25:58.783 | INFO     | __main__:prep_dataset:26 - Processing sales_data.csv...
+2025-11-07 20:25:58.789 | INFO     | analytics_project.data_scrubber:standardize_column_names:316 - Standardized column names: ['TransactionID', 'SaleDate', 'CustomerID', 'ProductID', 'StoreID', 'CampaignID', 'SaleAmount', 'RewardPointsEarned', 'ChannelUsed'] → ['transactionid', 'saledate', 'customerid', 'productid', 'storeid', 'campaignid', 'saleamount', 'rewardpointsearned', 'channelused']
+2025-11-07 20:25:58.799 | INFO     | analytics_project.data_scrubber:strip_whitespace:333 - Whitespace stripped successfully.
+2025-11-07 20:25:58.800 | INFO     | analytics_project.data_scrubber:drop_empty_rows:353 - Removed 0 completely empty rows.
+2025-11-07 20:25:58.802 | INFO     | analytics_project.data_scrubber:drop_duplicates:372 - Removed 3 duplicate rows.
+2025-11-07 20:25:58.807 | INFO     | __main__:prep_dataset:37 - Cleaned data saved to sales_data_clean.csv
+2025-11-07 20:25:58.808 | INFO     | __main__:main:51 - Data prep complete. Clean files written to: C:\Repos\smart-store-rucu\data\processed
+2025-11-07 21:16:07.837 | INFO     | __main__:prep_dataset:26 - Processing customers_data.csv...
+2025-11-07 21:16:07.841 | INFO     | analytics_project.data_scrubber:standardize_column_names:316 - Standardized column names: ['CustomerID', 'Name', 'Region', 'JoinDate', 'YearsWithCompany', 'PreferredChannel'] → ['customerid', 'name', 'region', 'joindate', 'yearswithcompany', 'preferredchannel']
+2025-11-07 21:16:07.843 | INFO     | analytics_project.data_scrubber:strip_whitespace:333 - Whitespace stripped successfully.
+2025-11-07 21:16:07.844 | INFO     | analytics_project.data_scrubber:drop_empty_rows:353 - Removed 0 completely empty rows.
+2025-11-07 21:16:07.846 | INFO     | analytics_project.data_scrubber:drop_duplicates:372 - Removed 8 duplicate rows.
+2025-11-07 21:16:07.849 | INFO     | __main__:prep_dataset:37 - Cleaned data saved to customers_data_clean.csv
+2025-11-07 21:16:07.850 | INFO     | __main__:prep_dataset:26 - Processing products_data.csv...
+2025-11-07 21:16:07.854 | INFO     | analytics_project.data_scrubber:standardize_column_names:316 - Standardized column names: ['ProductID', 'ProductName', 'Category', 'UnitPrice', 'YearIntroduced', 'SupplierRegion'] → ['productid', 'productname', 'category', 'unitprice', 'yearintroduced', 'supplierregion']
+2025-11-07 21:16:07.856 | INFO     | analytics_project.data_scrubber:strip_whitespace:333 - Whitespace stripped successfully.
+2025-11-07 21:16:07.857 | INFO     | analytics_project.data_scrubber:drop_empty_rows:353 - Removed 0 completely empty rows.
+2025-11-07 21:16:07.858 | INFO     | analytics_project.data_scrubber:drop_duplicates:372 - Removed 0 duplicate rows.
+2025-11-07 21:16:07.860 | INFO     | __main__:prep_dataset:37 - Cleaned data saved to products_data_clean.csv
+2025-11-07 21:16:07.861 | INFO     | __main__:prep_dataset:26 - Processing sales_data.csv...
+2025-11-07 21:16:07.866 | INFO     | analytics_project.data_scrubber:standardize_column_names:316 - Standardized column names: ['TransactionID', 'SaleDate', 'CustomerID', 'ProductID', 'StoreID', 'CampaignID', 'SaleAmount', 'RewardPointsEarned', 'ChannelUsed'] → ['transactionid', 'saledate', 'customerid', 'productid', 'storeid', 'campaignid', 'saleamount', 'rewardpointsearned', 'channelused']
+2025-11-07 21:16:07.875 | INFO     | analytics_project.data_scrubber:strip_whitespace:333 - Whitespace stripped successfully.
+2025-11-07 21:16:07.876 | INFO     | analytics_project.data_scrubber:drop_empty_rows:353 - Removed 0 completely empty rows.
+2025-11-07 21:16:07.878 | INFO     | analytics_project.data_scrubber:drop_duplicates:372 - Removed 3 duplicate rows.
+2025-11-07 21:16:07.888 | INFO     | __main__:prep_dataset:37 - Cleaned data saved to sales_data_clean.csv
+2025-11-07 21:16:07.888 | INFO     | __main__:main:51 - Data prep complete. Clean files written to: C:\Repos\smart-store-rucu\data\processed
