@@ -7,9 +7,6 @@ import sys
 print ("sys.path:",sys.path)
 
 import pandas as pd
-
-
-
 #Configure logging
 logging.basicConfig(level=logging.INFO,format="%(asctime)s-%(levelname)s -%(message)s")
 

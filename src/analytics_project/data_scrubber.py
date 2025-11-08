@@ -28,6 +28,7 @@ import io
 import pandas as pd
 from typing import Dict, Tuple, Union, List
 from pathlib import Path
+from utils_logger import logger
 
 class DataScrubber:
     def __init__(self, df: pd.DataFrame):
@@ -168,8 +169,7 @@ class DataScrubber:
             ValueError: If the specified column not found in the DataFrame.
         """
         try:
-            # TODO: Fix the following logic to call str.upper() and str.strip() on the given column 
-            # HINT: See previous function for an example
+        
             self.df[column] = self.df[column]
             return self.df
         except KeyError:
@@ -238,76 +238,139 @@ class DataScrubber:
         self.df = self.df.drop_duplicates()
         return self.df
 
-    def rename_columns(self, column_mapping: Dict[str, str]) -> pd.DataFrame:
+    def rename_columns(self, column_mapping: Dict[str, str]) -> "DataScrubber":
         """
         Rename columns in the DataFrame based on a provided mapping.
-        
+
         Parameters:
-            column_mapping (dict): Dictionary where keys are old column names and values are new names.
-        
+            column_mapping (Dict[str, str]): Dictionary where keys are old column names and values are new names.
+
         Returns:
-            pd.DataFrame: Updated DataFrame with renamed columns.
+            DataScrubber: The updated instance with renamed columns.
 
         Raises:
-            ValueError: If a specified column is not found in the DataFrame.
+            ValueError: If any specified column is not found in the DataFrame.
+            RuntimeError: If renaming fails due to unexpected structure.
         """
+        try:
+            missing = set(column_mapping.keys()) - set(self.df.columns)
+            if missing:
+                raise ValueError(f"Missing columns in DataFrame: {', '.join(missing)}")
 
-        for old_name, new_name in column_mapping.items():
-            if old_name not in self.df.columns:
-                raise ValueError(f"Column '{old_name}' not found in the DataFrame.")
-
-        self.df = self.df.rename(columns=column_mapping)
-        return self.df
-
-    def reorder_columns(self, columns: List[str]) -> pd.DataFrame:
+            self.df = self.df.rename(columns=column_mapping)
+            logger.info(f"Renamed columns: {column_mapping}")
+            return self
+        except ValueError as ve:
+            logger.error(f"Column validation failed: {ve}")
+            raise
+        except Exception as e:
+            logger.error(f"Failed to rename columns: {e}", exc_info=True)
+            raise RuntimeError("Column renaming failed due to unexpected error.") from e
+    def reorder_columns(self, columns: List[str]) -> "DataScrubber":
         """
-        Reorder columns in the DataFrame based on the specified order.
-        
+        Reorder DataFrame columns to match the specified list.
+
         Parameters:
-            columns (list): List of column names in the desired order.
-        
+            columns (List[str]): Desired column order.
+
         Returns:
-            pd.DataFrame: Updated DataFrame with reordered columns.
+            DataScrubber: The updated instance with reordered columns.
 
         Raises:
-            ValueError: If a specified column is not found in the DataFrame.
+            ValueError: If any specified column is missing from the DataFrame.
+            RuntimeError: If reordering fails due to unexpected structure.
         """
-        for column in columns:
-            if column not in self.df.columns:
-                raise ValueError(f"Column name '{column}' not found in the DataFrame.")
-        self.df = self.df[columns]
-        return self.df
+        try:
+            missing = set(columns) - set(self.df.columns)
+            if missing:
+                raise ValueError(f"Missing columns in DataFrame: {', '.join(missing)}")
+
+            self.df = self.df.loc[:, columns]
+            logger.info(f"Reordered columns: {columns}")
+            return self
+        except ValueError as ve:
+            logger.error(f"Column validation failed: {ve}")
+            raise
+        except Exception as e:
+            logger.error(f"Failed to reorder columns: {e}", exc_info=True)
+            raise RuntimeError("Column reordering failed due to unexpected error.") from e
     def standardize_column_names(self) -> "DataScrubber":
         """
-        Standardize column names by stripping whitespaces,converting to lowercase and replacing spaces with underscores.
-        
+        Standardize column names by:
+        - Stripping leading/trailing whitespace
+        - Converting to lowercase
+        - Replacing spaces with underscores
+
         Returns:
-         DataScrubber: The updated instance with standardized column names.
-         """
-        self.df.columns = [col.strip().lower().replace(" ", "_") for col  in self.df.columns]
-        return self
-    def strip_whitespace(self)-> "DataScrubber":
+            DataScrubber: The updated instance with standardized column names.
+
+        Raises:
+            RuntimeError: If column renaming fails due to unexpected structure.
         """
-        Strip leading and trailing whitspaces
-        
+        try:
+            original_columns = list(self.df.columns)
+            self.df.columns = [
+                col.strip().lower().replace(" ", "_") if isinstance(col, str) else col
+                for col in self.df.columns
+            ]
+            logger.info(f"Standardized column names: {original_columns} → {list(self.df.columns)}")
+            return self
+        except Exception as e:
+            logger.error(f"Failed to standardize column names: {e}", exc_info=True)
+            raise RuntimeError("Column name standardization failed.") from e
+    def strip_whitespace(self) -> "DataScrubber":
+        """
+        Strip leading and trailing whitespace from all string cells in the DataFrame.
+
         Returns:
-        DataScrubber: The updated instance with whitespace stripped.
+            DataScrubber: The updated instance with whitespace stripped.
+
+        Raises:
+            RuntimeError: If the operation fails due to unexpected data types or structure.
         """
-        self.df = self.df.map(lambda x: x.strip() if isinstance(x,str) else x)
-        return self
+        try:
+            self.df = self.df.applymap(lambda x: x.strip() if isinstance(x, str) else x)
+            logger.info("Whitespace stripped successfully.")
+            return self
+        except Exception as e:
+            logger.error(f"Failed to strip whitespace: {e}", exc_info=True)
+            raise RuntimeError("Whitespace stripping failed due to unexpected data format.") from e
+
     def drop_empty_rows(self) -> "DataScrubber":
         """
-        Drop rows that are completely empty
+        Drop rows that are completely empty (all values are NaN).
+
         Returns:
-           DataScrubber: The updated instance with empty rows removed"
-           """
-        self.df.dropna(how="all", inplace=True)
-        return(self)
+            DataScrubber: The updated instance with empty rows removed.
+
+        Raises:
+            RuntimeError: If the operation fails due to unexpected data format or structure.
+        """
+        try:
+            original_count = len(self.df)
+            self.df.dropna(how="all", inplace=True)
+            removed = original_count - len(self.df)
+            logger.info(f"Removed {removed} completely empty rows.")
+            return self
+        except Exception as e:
+            logger.error(f"Failed to drop empty rows: {e}", exc_info=True)
+            raise RuntimeError("Empty row removal failed due to unexpected data format.") from e
     def drop_duplicates(self) -> "DataScrubber":
-     """
-     Drop duplicate rows from dataframes
-     Returns:
-       DataScrubber : The updated instance with duplicates removed"
-       """
-     self.df = self.df.drop_duplicates()          
-     return self
+        """
+        Drop duplicate rows from the DataFrame.
+
+        Returns:
+            DataScrubber: The updated instance with duplicates removed.
+
+        Raises:
+            RuntimeError: If the operation fails due to unexpected data format or structure.
+        """
+        try:
+            original_count = len(self.df)
+            self.df = self.df.drop_duplicates()
+            removed = original_count - len(self.df)
+            logger.info(f"Removed {removed} duplicate rows.")
+            return self
+        except Exception as e:
+            logger.error(f"Failed to drop duplicates: {e}", exc_info=True)
+            raise RuntimeError("Duplicate removal failed due to unexpected data format.") from e
