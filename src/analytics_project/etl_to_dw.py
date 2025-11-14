@@ -2,6 +2,7 @@ import pandas as pd
 import sqlite3
 import pathlib
 import sys
+from datetime import datetime, timedelta
 
 # Project Root Setup
 PROJECT_ROOT = pathlib.Path(__file__).resolve().parents[2]
@@ -77,13 +78,64 @@ def norm_sales(df:pd.DataFrame) -> pd.DataFrame:
     df["sale_amount"] = pd.to_numeric(df["sale_amount"], errors="coerce").astype(float)
     df = df.dropna(subset=["customer_id","product_id","sale_amount"])
    
-    if df["sales_id"].isna().any or df["sale_id"].duplicated().any():
+    if df["sales_id"].isna().any or df["sales_id"].duplicated().any():
         df = df.reset_index(drop=True)
         df["sales_id"] = (df.index +1).astype("Int64")
         
     return df
 
-def create_schema(cursor: sqlite3.Cursor) -> None:
+def generate_date_dimension(start_date: str, end_date: str) -> pd.DataFrame:
+    """
+    Generate date dimension table with various date attributes.
+
+    Args:
+    start_date(str): in 'YYYY-MM-DD' format
+    end_date(str) : in 'YYYY-MM-DD' format
+     
+    Returns:
+    pd.DataFrame: Date dimension dataframe
+"""
+     
+    start = datetime.strptime(start_date, '%Y-%m-%d')
+    end   = datetime.strptime(end_date,'%Y-%m-%d')
+
+# Generate date range
+    date_range = pd.date_range(start=start, end=end, freq='D')
+    
+# Create dimension dataframe with only requested fields
+    dim_date = pd.DataFrame({
+        'date_id': date_range.strftime('%Y%m%d').astype(int), #20241127
+        'full_date' : date_range.strftime('%Y-%m-%d'),
+        'year' : date_range.year,
+        'month' : date_range.month,
+        'month_name': date_range.strftime('%B'),
+        'day' : date_range.day,
+        'week': date_range.isocalendar().week
+        
+    })
+    
+    return dim_date
+
+def create_schema(cursor:sqlite3.Cursor) -> None:
+    
+    cursor.execute("DROP TABLE IF EXISTS sales")
+    cursor.execute("DROP TABLE IF EXISTS customer")
+    cursor.execute("DROP TABLE IF EXISTS product")
+    cursor.execute("DROP TABLE IF EXISTS dim_date")
+    # Create dim_date table
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS dim_date(
+        date_id INTEGER PRIMARY KEY,
+        full_date TEXT NOT NULL,
+        year INTEGER NOT NULL,
+        month INTEGER NOT NULL,
+        month_name TEXT NOT NULL,
+        day INTEGER NOT NULL,
+        week INTEGER NOT NULL
+    )
+    """)
+
+
     cursor.execute("""
     CREATE TABLE IF NOT EXISTS customer (
         customer_id INTEGER PRIMARY KEY,
@@ -99,8 +151,10 @@ def create_schema(cursor: sqlite3.Cursor) -> None:
         category TEXT
     )
     """)
+    
+    
     cursor.execute("""
-    CREATE TABLE IF NOT EXISTS sales (
+      CREATE TABLE IF NOT EXISTS sales (
         sales_id INTEGER PRIMARY KEY,
         customer_id INTEGER NOT NULL,
         product_id INTEGER NOT NULL,
@@ -113,10 +167,15 @@ def create_schema(cursor: sqlite3.Cursor) -> None:
     """)
 # Delete the existing records from table
 def delete_existing_records(cursor: sqlite3.Cursor) -> None:
-    for table in ["customer", "product", "sales"]:
+    for table in ["sales","customer", "product", "dim_date"]: # delete sales first due to foreign key
         print (f" the table being deleted is: {table}")
         cursor.execute(f"DELETE FROM {table}")
-
+        
+def insert_dim_date(df: pd.DataFrame, cursor: sqlite3.Cursor) -> None:
+    """Insert date dimension data into dim_date table."""
+    df.to_sql("dim_date", cursor.connection, if_exists = "append", index =False)
+    print(f"[INFO] Inserted {len(df)} records into dim_data table")
+    
 def insert_customers(df: pd.DataFrame, cursor: sqlite3.Cursor) -> None:
     df.to_sql("customer", cursor.connection, if_exists="append", index=False)
     
@@ -124,8 +183,32 @@ def insert_products(df: pd.DataFrame, cursor:sqlite3.Cursor) -> None:
     df.to_sql("product",cursor.connection, if_exists= "append",index=False)
     
 def insert_sales(df: pd.DataFrame, cursor:sqlite3.Cursor) -> None:
-    df.to_sql("sales", cursor.connection,if_exists= "append",index=False)
+    """ Insert sales data and populate date_id foreign key."""
     
+    initial_count = len(df)
+    print(f"[INFO] Processing {initial_count} sales records")
+   
+   # Get valid customer_ids from customer table
+    cursor.execute("SELECT customer_id FROM customer")
+    valid_customer_ids = set(row[0] for row in cursor.fetchall())
+    print(f"[DEBUG] valid customer_ids: {len(valid_customer_ids)}")
+    
+    # Get valid product_ids from product table
+    cursor.execute("SELECT product_id from product")
+    valid_product_ids = set(row[0] for row in cursor.fetchall())
+    print(f"[DEBUG] Valid product_ids: {len(valid_product_ids)}")
+    
+    # Filter sales to only include valid foreign keys
+    df = df[df['customer_id'].isin(valid_customer_ids)].copy()
+    after_customer_filter = len(df)
+    print(f"[INFO] After customer filter: {after_customer_filter} records")
+    
+    # Insert valid sales
+    if len(df) >0:
+        df.to_sql("sales",cursor.connection, if_exists = "append",index=False)
+        print(f"[INFO] Successfully inserted {len(df)} records to sales table")
+    else:
+        print("[WARNING] No valid sales records to insert")
 def print_table_row_counts(cursor: sqlite3.Cursor, tables: list[str]) -> None:
     print("[VALIDATION] Table row counts:")
     for table in tables:
@@ -136,14 +219,21 @@ def print_table_row_counts(cursor: sqlite3.Cursor, tables: list[str]) -> None:
 # Main ETL Function
 def load_data_to_db() -> None:
     DW_DIR.mkdir(parents=True, exist_ok=True)
-
+    
+      
     conn = sqlite3.connect(DB_PATH)
     conn.execute("PRAGMA foreign_keys = ON;")
     cursor = conn.cursor()
 
     create_schema(cursor)
-    delete_existing_records(cursor)
+   
+    
+    # Generate and load date dimension(covering 2024 through 2025)
+    print("[INFO] Generating date dimension ...")
+    dim_date_df = generate_date_dimension('2024-01-01', '2025-11-01')
+    insert_dim_date(dim_date_df, cursor)
 
+    # Load customers
     customer_file_path = PREPARED_DATA_DIR / "customers_data_clean.csv"
     if not customer_file_path.exists():
         raise FileNotFoundError(f"Missing file: {customer_file_path}")
@@ -152,6 +242,7 @@ def load_data_to_db() -> None:
     customers_df = norm_customers(customers_df) # calling the normalising function
     insert_customers(customers_df, cursor) # calling the inserting records function
     
+    # Load products
     product_file_path = PREPARED_DATA_DIR/ "products_data_clean.csv"
     if not product_file_path.exists():
         raise FileNotFoundError(f"Missing file:{product_file_path}")
@@ -160,6 +251,7 @@ def load_data_to_db() -> None:
     products_df = norm_products(products_df) # calling the normalising function
     insert_products(products_df,cursor) # calling the inserting record function
    
+   # Load sales
     sales_file_path = PREPARED_DATA_DIR/"sales_data_clean.csv"
     if not sales_file_path.exists():
         raise FileNotFoundError(f"Missing file:{sales_file_path}")
@@ -169,14 +261,15 @@ def load_data_to_db() -> None:
     insert_sales(sales_df,cursor) # calling the inserting record function
     
     conn.commit()
-    print_table_row_counts(cursor, ["customer", "product", "sales"])
+    print_table_row_counts(cursor, ["dim_date","customer", "product", "sales"])
     # print("[VALIDATION] Row counts:")
     # for r in cursor.execute("SELECT 'customer', COUNT(*) FROM customer"):
     #     print(r)
 
     conn.close()
+    print("\n[success] ETL Process completed successfully!")
 
 # Entry Point
 if __name__ == "__main__":
-    load_data_to_db()
+ load_data_to_db()
     
