@@ -176,3 +176,12 @@ To run data_scrubber.py
 ```shell
 python3 src/analytics_project/data_scrubber.py
 ```
+To run data_prep.py
+
+```shell
+python3 src/analytics_project/data_prep.py
+```
+To populate the data warehouse smart_sales.db
+```shell
+python3 src/analytics_project/data_prep etl_to_dw.py
+```
