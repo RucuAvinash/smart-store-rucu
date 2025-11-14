@@ -100,12 +100,9 @@ productid,productname,category,unitprice,yearintroduced,supplierregion
 2098.0,Clothing-Trouble,Electronics,907.86,2023,Southwest
 2099.0,Electronics-Several,Electronics,646.32,2022,Southeast
 2100.0,,Office,905.79,2009,Northeast
-,,home,,2010,Southwest
 2102.0,Office-Fight,clothing,755.94,2001,NORTHeast
 2103.0,Home-Seem,,,2014,Southwest
-,Office-Discuss,,490.79,2022,NORTHEAST
 2105.0,Office-Recent,Clothing,,2023,Southwest
-,,Electronics,842.1,2025,Northeast
 2089.0,Electronics-Action,office,413.52,2017,Southeast
 2090.0,Office-Staff,OFFICE,71.64,2022,midwest
 2091.0,Office-Mrs,OFFICE,905.79,2015,northeast

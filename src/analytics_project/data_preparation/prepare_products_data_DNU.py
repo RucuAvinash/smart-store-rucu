@@ -120,6 +120,52 @@ def remove_duplicates(df: pd.DataFrame) -> pd.DataFrame:
     logger.info(f"{len(df)} records remaining after removing duplicates.")
     return df
 
+# def handle_missing_values(df: pd.DataFrame) -> pd.DataFrame:
+#     """
+#     Handle missing values by filling or dropping.
+#     This logic is specific to the actual data and business rules.
+
+#     Args:
+#         df (pd.DataFrame): Input DataFrame.
+    
+#     Returns:
+#         pd.DataFrame: DataFrame with missing values handled.
+#     """
+#     logger.info(f"FUNCTION START: handle_missing_values with dataframe shape={df.shape}")
+    
+#     # Log missing values by column before handling
+#     # NA means missing or "not a number" - ask your AI for details
+#     missing_by_col = df.isna().sum()
+#     logger.info(f"Missing values by column before handling:\n{missing_by_col}")
+    
+#     # TODO: OPTIONAL - We can implement appropriate missing value handling 
+#     # specific to our data. 
+#     # For example: Different strategies may be needed for different columns
+#     # USE YOUR COLUMN NAMES - these are just examples
+#     df['productname'].fillna('Unknown Product', inplace=True)
+#     df['category'].fillna('', inplace=True)
+#     df['unitprice'].fillna(df['unitprice'].median(), inplace=True)
+#     # df['category'].fillna(df['category'].mode()[0], inplace=True)
+#     #df.dropna(subset=['productid'], inplace=True)  # Remove rows without product code
+#     df['productid'] = df['productid'].replace(r'^\s*$', pd.NA, regex=True)
+#     df['productid'] = df['productid'].replace(['','NULL', 'null', 'NaN', 'nan'], pd.NA)
+#     # drop rows with missing productid
+#     df.dropna(subset=['productid'], inplace=True)
+#     # drop duplicate productid rows
+#     before_dedup = len(df)
+#     df = df.drop_duplicates(subset=['productid'])
+#     df = df.drop_duplicates()
+#     removed_count = before_dedup - len(df)
+#     logger.info("Removed {removed_count} duplicate rows")
+#     logger.info(f"{len(df)} records remaining after removing duplicates.")
+#     return df
+
+#     # Log missing values by column after handling
+#     #missing_after = df.isna().sum()
+#     ##logger.info(f"Missing values by column after handling:\n{missing_after}")
+#     #logger.info(f"{len(df)} records remaining after handling missing values.")
+#     #return df
+
 def handle_missing_values(df: pd.DataFrame) -> pd.DataFrame:
     """
     Handle missing values by filling or dropping.
@@ -134,24 +180,38 @@ def handle_missing_values(df: pd.DataFrame) -> pd.DataFrame:
     logger.info(f"FUNCTION START: handle_missing_values with dataframe shape={df.shape}")
     
     # Log missing values by column before handling
-    # NA means missing or "not a number" - ask your AI for details
     missing_by_col = df.isna().sum()
     logger.info(f"Missing values by column before handling:\n{missing_by_col}")
     
-    # TODO: OPTIONAL - We can implement appropriate missing value handling 
-    # specific to our data. 
-    # For example: Different strategies may be needed for different columns
-    # USE YOUR COLUMN NAMES - these are just examples
+    # ✅ Handle ProductID - must not be empty (CRITICAL BUSINESS RULE)
+    initial_count = len(df)
+    # Replace whitespace-only strings with NA
+    df['productid'] = df['productid'].replace(r'^\s*$', pd.NA, regex=True)
+    # Replace various null representations with NA
+    df['productid'] = df['productid'].replace(['', 'NULL', 'null', 'NaN', 'nan'], pd.NA)
+    # Drop rows where productid is NA
+    df.dropna(subset=['productid'], inplace=True)
+    removed_count = initial_count - len(df)
+    logger.info(f"Removed {removed_count} rows with missing/invalid productid")
+    
+    # Handle other columns with missing values
     df['productname'].fillna('Unknown Product', inplace=True)
-    df['category'].fillna('', inplace=True)
+    df['category'].fillna('Uncategorized', inplace=True)
     df['unitprice'].fillna(df['unitprice'].median(), inplace=True)
-    # df['category'].fillna(df['category'].mode()[0], inplace=True)
-    df.dropna(subset=['productid'], inplace=True)  # Remove rows without product code
+    
+    # Remove duplicates after handling missing values
+    before_dedup = len(df)
+    df = df.drop_duplicates(subset=['productid'])
+    df = df.drop_duplicates()
+    removed_count = before_dedup - len(df)
+    logger.info(f"Removed {removed_count} duplicate rows after handling missing values")
+    logger.info(f"{len(df)} records remaining after removing duplicates.")
     
     # Log missing values by column after handling
     missing_after = df.isna().sum()
     logger.info(f"Missing values by column after handling:\n{missing_after}")
     logger.info(f"{len(df)} records remaining after handling missing values.")
+    
     return df
 
 def remove_outliers(df: pd.DataFrame) -> pd.DataFrame:
@@ -252,10 +312,7 @@ def main() -> None:
     # Read raw data
     df = read_raw_data(input_file)
 
-        # Read raw data
-    df = read_raw_data(input_file)
-
-    # Record original shape
+      # Record original shape
     original_shape = df.shape
 
     # Log initial dataframe information
@@ -290,8 +347,10 @@ def main() -> None:
     save_prepared_data(df, output_file)
 
     logger.info("==================================")
-    logger.info(f"Original shape: {df.shape}")
-    logger.info(f"Cleaned shape:  {original_shape}")
+    logger.info(f"Original shape: {original_shape}")  # ✅ FIXED
+    logger.info(f"Cleaned shape:  {df.shape}")        # ✅ FIXED
+    # logger.info(f"Original shape: {df.shape}")
+    # logger.info(f"Cleaned shape:  {original_shape}")
     logger.info("==================================")
     logger.info("FINISHED prepare_products_data.py")
     logger.info("==================================")
