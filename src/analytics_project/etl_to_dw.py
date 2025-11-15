@@ -191,17 +191,15 @@ def insert_sales(df: pd.DataFrame, cursor:sqlite3.Cursor) -> None:
    # Get valid customer_ids from customer table
     cursor.execute("SELECT customer_id FROM customer")
     valid_customer_ids = set(row[0] for row in cursor.fetchall())
-    print(f"[DEBUG] valid customer_ids: {len(valid_customer_ids)}")
-    
+ 
     # Get valid product_ids from product table
     cursor.execute("SELECT product_id from product")
     valid_product_ids = set(row[0] for row in cursor.fetchall())
-    print(f"[DEBUG] Valid product_ids: {len(valid_product_ids)}")
-    
+   
     # Filter sales to only include valid foreign keys
     df = df[df['customer_id'].isin(valid_customer_ids)].copy()
     after_customer_filter = len(df)
-    print(f"[INFO] After customer filter: {after_customer_filter} records")
+   ## print(f"[INFO] After customer filter: {after_customer_filter} records")
     
     # Insert valid sales
     if len(df) >0:
@@ -210,7 +208,7 @@ def insert_sales(df: pd.DataFrame, cursor:sqlite3.Cursor) -> None:
     else:
         print("[WARNING] No valid sales records to insert")
 def print_table_row_counts(cursor: sqlite3.Cursor, tables: list[str]) -> None:
-    print("[VALIDATION] Table row counts:")
+    print("Table row counts:")
     for table in tables:
         cursor.execute(f"SELECT COUNT(*) FROM {table}")
         count = cursor.fetchone()[0]
@@ -262,9 +260,6 @@ def load_data_to_db() -> None:
     
     conn.commit()
     print_table_row_counts(cursor, ["dim_date","customer", "product", "sales"])
-    # print("[VALIDATION] Row counts:")
-    # for r in cursor.execute("SELECT 'customer', COUNT(*) FROM customer"):
-    #     print(r)
 
     conn.close()
     print("\n[success] ETL Process completed successfully!")
