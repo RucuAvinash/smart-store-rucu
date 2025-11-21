@@ -105,7 +105,7 @@ def generate_date_dimension(start_date: str, end_date: str) -> pd.DataFrame:
 # Create dimension dataframe with only requested fields
     dim_date = pd.DataFrame({
         'date_id': date_range.strftime('%Y%m%d').astype(int), #20241127
-        'full_date' : date_range.strftime('%Y-%m-%d'),
+        'full_date' : date_range.strftime('%m/%d/%Y'),
         'year' : date_range.year,
         'month' : date_range.month,
         'month_name': date_range.strftime('%B'),
