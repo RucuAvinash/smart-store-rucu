@@ -185,3 +185,111 @@ To populate the data warehouse smart_sales.db
 ```shell
 python3 src/analytics_project/data_prep etl_to_dw.py
 ```
+### ETL Tables.
+
+1. Customer - Dimension
+2. Product - Dimension
+3. Date - Dimension
+
+Fact Table: Sales 
+
+
+📊 Sales Analytics Dashboard — Power BI Project
+🧠 Reporting tools allow us to turn warehouse data into actionable insights that drive business decisions. Since BI professionals work across multiple platforms, this project ensures that everyone gains equivalent experience, regardless of operating system.
+
+Windows users will work with Power BI Desktop.
+Mac/Linux users will implement the same concepts using Spark SQL and Python.
+We will apply core OLAP operations (slicing, dicing, and drilldown) and generate interactive visualizations to explore business performance. This project reinforces key data analysis and reporting skills used across industries.
+
+Environment:
+
+OS | Windows11
+BI Tool | Microsoft POwer BI Desktop
+Data Source | ODBC Connection to relational database QLite_x64
+Query Language | SQL via ODBC.Query
+Visualisation Techniques| Slicer, Matrix,LineChart with Drill down
+
+SQL QUeries Used
+
+Total Spend by Customer
+SELECT c.name, SUM(s.sale_amount) AS total_spent
+FROM sales s
+JOIN customer c ON s.customer_id = c.customer_id
+GROUP BY c.name
+ORDER BY total_spent DESC;
+
+
+Sales by Category and Product
+SELECT category, product_name, SUM(sale_amount) AS total_sales
+FROM product_sales
+GROUP BY category, product_name;
+
+
+
+📁 Dataset Used
+Table: product_sales
+Fields included: | Field Name     | Description                                  | |----------------|----------------------------------------------| | category     | Product category (e.g., Electronics, Apparel)| | customer_id  | Unique customer identifier                   | | product_id   | Unique product identifier                    | | product_name | Name of the product                          | | sale_date    | Date of sale (used for time-based analysis)  | | sale_amount  | Total amount spent per transaction           |
+
+Table: Top Customer
+Fields included: |Name|Region|Total_Spent
+
+
+🔍 Key Features
+1. Slicing
+- Date Range Slicer using sale_date
+- Allows users to filter all visuals by custom time periods
+- Supports “Between” and “Relative Date” modes for flexible analysis
+![alt text](image-1.png)
+
+2. Dicing
+- Matrix and stacked column visuals group data by:
+- category × product_name
+- category × customer_id
+- Enables comparison across multiple categorical dimensions
+
+![alt text](image-2.png)
+3. Drilldown
+- Line chart with hierarchy: Year > Quarter > Month
+- Users can click to drill into time-based trends
+- Powered by Power BI’s built-in date hierarchy from sale_date
+
+![alt text](image-3.png)
+
+4. Max Spender Highlight
+- Identifies top spender (e.g., Stephanie Garrison)
+- Uses conditional formatting to bold or highlight “MaxSpender” label
+5. Min Spender Highlight
+   - Identifies lowest spender (e.g., Cara Conway)
+   - Uses conditional formatting to bold or highlight “MinSpender” label
+- ![alt text](image-4.png)
+
+🛠️ Setup Instructions
+- Connect to Data Source
+- Use ODBC or SQL connector to link to the original sales database
+- Ensure DSN (e.g., SQLite_x64) is correctly configured
+- Import Data
+- Load product_sales table into Power BI
+- If overwritten, re-import using Get Data → ODBC → select table
+- Build Visuals
+- Add slicers, matrix, and line charts as described above
+- Use sale_amount as the aggregated value (Sum)
+- Enable Drilldown
+- Use Power BI’s date hierarchy
+- Activate drill mode via the visual’s top-left drill icons
+
+📈 Sample Insights
+- Seasonal spikes in sales by category
+- Top-performing products per quarter
+- Customer spending patterns over time
+- Identification of high-value customers
+
+📌 Notes
+- All visuals are dynamic and respond to slicer filters
+- Dashboard is optimized for clarity, interactivity, and presentation impact
+- Future enhancements may include:
+- Predictive trend lines
+- Exportable summary reports
+
+👤 Author
+Rucmani
+
