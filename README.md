@@ -294,15 +294,15 @@ Fields included: |Name|Region|Total_Spent
 
 
 Project 6: OLAP Cube Analysis
-Section 1: The Business Goal
+Section 1: The Business Goal  
 How does the CLV_Tier(Customer_LifetimeValue_Tier ) influence purchasing behaviour across weekdays and product categories?
-Section 2: Data Source
+Section 2: Data Source  
 Pre-cleaned OLAP cube outputs from the smart_sales_db and created two csv file(HV_customer_olap_cube.csv) with customer_id, name, CustomerLifetime Value fields and multidimensional_olap_cube.csv
 with customer_id, DayofWeek, product_id, product_name, sale_amount_sum, sale_amount_mean, sale_id_count, category fields.
 Joined both the csv files on customer_id.
-Section 3:Tools
+Section 3:Tools  
 I used VS code to clean up existing data and used POwer BI for slicing, dicing, drilling down data for visual storytelling.
-Section 4: Workflow and Logic
+Section 4: Workflow and Logic  
 Dimensions: - CLV_Tier: Platinum, Gold, Silver, Bronze (based on CustomerLifetimeValue thresholds)
 - DayofWeek: Extracted from sale_date, sorted using DayofWeekSort
 - product_id, category
@@ -329,13 +329,13 @@ Visuals:
 - Stacked column chart with drill-down into product/category
 - Slicers enabling dynamic exploration
 
-Section 6: Suggested Business Action
+Section 6: Suggested Business Action  
 - Launch targeted Sunday promotions for Bronze-tier customers
 - Introduce weekday loyalty incentives for high-value tiers
 - Optimize inventory for top-selling categories on weekends
 - Launch offers to increase sales on weekdays
 
-Section 7: Challenges
+Section 7: Challenges  
 
 - When merging the two csv files there were duplicate customer_id values in HV_customer_olap_cube which blocked the relationship modeling.
 → Resolved by removing duplicate rows in Power BI.
