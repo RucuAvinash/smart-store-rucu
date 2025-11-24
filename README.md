@@ -293,3 +293,55 @@ Fields included: |Name|Region|Total_Spent
 👤 Author
 Rucmani
 
+
+Project 6: OLAP Cube Analysis
+Section 1: The Business Goal
+How does the CLV_Tier(Customer_LifetimeValue_Tier ) influence purchasing behaviour across weekdays and product categories?
+Section 2: Data Source
+Pre-cleaned OLAP cube outputs from the smart_sales_db and created two csv file(HV_customer_olap_cube.csv) with customer_id, name, CustomerLifetime Value fields and multidimensional_olap_cube.csv
+with customer_id, DayofWeek, product_id, product_name, sale_amount_sum, sale_amount_mean, sale_id_count, category fields.
+Joined both the csv files on customer_id.
+Section 3:Tools
+I used VS code to clean up existing data and used POwer BI for slicing, dicing, drilling down data for visual storytelling.
+Section 4: Workflow and Logic
+Dimensions: - CLV_Tier: Platinum, Gold, Silver, Bronze (based on CustomerLifetimeValue thresholds)
+- DayofWeek: Extracted from sale_date, sorted using DayofWeekSort
+- product_id, category
+Aggregations:
+- sale_amount_sum: Total sales per customer-product-day
+- sale_amount_mean: Average sale value
+- sales_id_count: Number of transactions
+Power BI workflows:
+1. Created a Stacked column chart to analyze the sum of sales amount by CLV Tier and Product id
+![alt text](image-5.png)
+2. Created a Matrix to identify the sum of Sales by week and CLV_Tier. I also used a drill down hierarchy (DayofWeek->product_id->category) Created a Heatmap to identify which Tier had the largest sum of sales amount.
+3. Additionaly added SLicers to group the results by Category
+
+Section 5: 
+
+Narrative insights:
+- Bronze-tier customers dominate Sunday sales, contributing over $1.4M
+- Platinum and Gold tiers show concentrated activity on weekends
+- Weekday purchases are sparse, suggesting opportunity for weekday incentives
+Visuals:
+- Matrix heat map showing tier-day performance
+- Stacked column chart with drill-down into product/category
+- Slicers enabling dynamic exploration
+
+Section 6: Suggested Business Action
+- Launch targeted Sunday promotions for Bronze-tier customers
+- Introduce weekday loyalty incentives for high-value tiers
+- Optimize inventory for top-selling categories on weekends
+- Launch offers to increase sales on weekdays
+
+Section 7: Challenges
+
+- When merging the two csv files there were duplicate customer_id values in HV_customer_olap_cube which blocked the relationship modeling.
+→ Resolved by removing duplicate rows in Power BI.
+- The DayofWeek field was missing in Power BI despite being present in CSV
+→ So I refreshed data source.
+
+
+
+
+s

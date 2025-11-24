@@ -43,16 +43,21 @@ conn.close()
 
 
 def ingest_sales_data_from_dw() -> pd.DataFrame:
-    """Ingest sales data from SQLite data warehouse."""
+    """Ingest sales data from SQLite data warehouse, joined with product info."""
     try:
-        conn = sqlite3.connect(DB_PATH)
-        sales_df = pd.read_sql_query("SELECT * FROM sales", conn)
-        conn.close()
-        logger.info("Sales data successfully loaded from SQLite data warehouse")
+        with sqlite3.connect(DB_PATH) as conn:
+            sales_df = pd.read_sql_query("""
+                SELECT s.*, p.product_name, p.category
+                FROM sales s
+                JOIN product p ON s.product_id = p.product_id
+            """, conn)
+        logger.info("Sales + Product data successfully loaded from SQLite data warehouse")
         return sales_df
     except Exception as e:
         logger.error(f"Error loading data from data warehouse: {e}")
         raise
+
+
 
 
 def create_olap_cube(sales_df: pd.DataFrame, dimensions: list, metrics: dict) -> pd.DataFrame:
@@ -153,7 +158,7 @@ def main():
     sales_df["Year"] = sales_df["sale_date"].dt.year
     
     #Step 3: Define dimensions and metrics for the cube
-    dimensions= ["DayofWeek","product_id","customer_id"]
+    dimensions= ["DayofWeek","product_id","product_name","category","customer_id"]
     metrics = {"sale_amount": ["sum","mean"],"sales_id":"count"}
     
     # Step 4: Create the cube
