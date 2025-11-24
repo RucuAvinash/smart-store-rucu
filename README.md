@@ -290,8 +290,7 @@ Fields included: |Name|Region|Total_Spent
 - Predictive trend lines
 - Exportable summary reports
 
-👤 Author
-Rucmani
+
 
 
 Project 6: OLAP Cube Analysis
@@ -316,6 +315,8 @@ Power BI workflows:
 ![alt text](image-5.png)
 2. Created a Matrix to identify the sum of Sales by week and CLV_Tier. I also used a drill down hierarchy (DayofWeek->product_id->category) Created a Heatmap to identify which Tier had the largest sum of sales amount.
 3. Additionaly added SLicers to group the results by Category
+![alt text](image-6.png)
+
 
 Section 5: 
 
@@ -344,4 +345,5 @@ Section 7: Challenges
 
 
 
-s
+👤 Author
+Rucmani
